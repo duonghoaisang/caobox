@@ -1,8 +1,7 @@
-Đựơc thiết kế đơn giản dựa trên mô hình MVC, 
+#labels Featured
+CaoBox v1.0 đựơc thiết kế đơn giản dựa trên mô hình MVC, thuận tiện cho việc nghiên cứu và phát triển các ứng dụng theo ý của bạn
 
-= Các lớp cơ bản  =
-
-Gồm các chức lớp cơ bản:
+= Các lớp cơ bản: =
 - basicfw: bắt lỗi hệ thống và thông báo lỗi
 
 - controller: phân tích request, gọi module,action tương ứng
