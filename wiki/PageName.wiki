@@ -8,13 +8,12 @@
 = Mô tả =
 
 Gồm các chức lớp cơ bản:
- basicfw: bắt lỗi hệ thống và thông báo lỗi
+- basicfw: bắt lỗi hệ thống và thông báo lỗi
 
+- controller: phân tích request, gọi module,action tương ứng
 
- controller: phân tích request, gọi module,action tương ứng
+- model:  kết nối database qua 1 class db 
 
- model:  kết nối database qua 1 class db 
+- view: hiển thị kết quả thông qua 1 template engine
 
- view: hiển thị kết quả thông qua 1 template engine
-
- hooks: định nghĩa những hàm hệ thống mà người dùng có thể hook vào đựơc
+- hooks: định nghĩa những hàm hệ thống mà người dùng có thể hook vào đựơc
