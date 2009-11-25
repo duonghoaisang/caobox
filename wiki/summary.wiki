@@ -1,0 +1,14 @@
+Đựơc thiết kế đơn giản dựa trên mô hình MVC, 
+
+= Các lớp cơ bản  =
+
+Gồm các chức lớp cơ bản:
+- basicfw: bắt lỗi hệ thống và thông báo lỗi
+
+- controller: phân tích request, gọi module,action tương ứng
+
+- model:  kết nối database qua 1 class db 
+
+- view: hiển thị kết quả thông qua 1 template engine
+
+- hooks: định nghĩa những hàm hệ thống mà người dùng có thể hook vào đựơc
