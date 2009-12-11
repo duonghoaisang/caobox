@@ -4,7 +4,7 @@ CaoBox v1.0 đựơc thiết kế đơn giản dựa trên mô hình MVC, thuậ
 = Các lớp cơ bản: =
 - [http://code.google.com/p/caobox/wiki/class_caobox caobox]: bắt lỗi hệ thống và thông báo lỗi
 
-- controller: phân tích request, gọi module,action tương ứng
+- [http://code.google.com/p/caobox/wiki/class_controller controller]: phân tích request, gọi module,action tương ứng
 
 - model:  kết nối database qua 1 class db 
 
