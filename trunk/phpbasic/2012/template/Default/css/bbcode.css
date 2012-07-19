@@ -1,0 +1,81 @@
+/* CSS Document */
+fieldset{
+	padding: 0px 0px 10px 10px;
+}
+legend{
+	border: 1px solid #ccc; 
+	background: #eee;
+	font-weight: bold;
+	padding: 4px;
+}
+.bbcode_toolbar{
+}
+.bbcode_toolbar span{
+	display: block;
+	float: left;
+}
+.bbcode_toolbar span.space{
+	background: url(../images/bbcode/tool.space.gif) no-repeat;
+	width: 5px;
+	height: 20px;
+}
+
+.bbcode_toolbar span.bold{
+	background: url(../images/bbcode/bold.gif) no-repeat;
+	width: 21px;
+	height: 20px;
+}
+.bbcode_toolbar span.italic{
+	background: url(../images/bbcode/italic.gif) no-repeat;
+	width: 21px;
+	height: 20px;
+}
+.bbcode_toolbar span.underline{
+	background: url(../images/bbcode/underline.gif) no-repeat;
+	width: 21px;
+	height: 20px;
+}
+.bbcode_toolbar span.image{
+	background: url(../images/bbcode/image.gif) no-repeat;
+	width: 21px;
+	height: 20px;
+}
+.bbcode_toolbar span.link{
+	background: url(../images/bbcode/link.gif) no-repeat;
+	width: 21px;
+	height: 20px;
+}
+.bbcode_toolbar span.quote{
+	background: url(../images/bbcode/quote.gif) no-repeat;
+	width: 21px;
+	height: 20px;
+}
+.bbcode form{
+	position: relative;
+	padding:0;
+	padding: 0px 20px 0px 10px;
+}
+.bbcode .hide{
+	z-index: 100000;
+	position: absolute;
+	right: 4px;
+	top: -15px;
+	display: block;
+}
+
+.bbcode input,.bbcode textarea{
+	border: 1px solid #ccc;
+}
+.bbcode textarea{
+	height: 150px;
+}
+.form_name,.form_author,.form_content{
+	width: 100%;
+}
+.bbcode input.button{
+	background: url(../images/bbcode/btn.bg.gif);
+	height: 25px;
+	margin-top: 4px;
+}
+
+.bbcode .hide{ background: none; }

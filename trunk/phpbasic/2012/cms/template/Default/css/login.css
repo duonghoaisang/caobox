@@ -1,0 +1,32 @@
+/* CSS Document */
+#login_form{
+	margin: 200px auto;
+	width: 400px;
+	height: 170px;
+	border: 1px solid #ccc;
+	
+}
+#login_form p{
+	background: #eee url(../images/headerbg.jpg) 0 -34px repeat-x;
+	margin: 0;
+	height: 30px;
+	margin-bottom: 5px;
+	color: #fff;
+	font-size: 22px;
+	padding:15px;
+}
+#login_form label{
+	width: 100px;
+	float: left;
+	margin: 5px;
+}
+#login_form input{
+	float: left;
+	width: 250px;
+	margin: 5px;
+	border: 1px solid #ccc;
+}
+#login_form .button{
+	width:auto;
+}
+

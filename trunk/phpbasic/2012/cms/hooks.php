@@ -1,0 +1,23 @@
+<?php
+/**
+ * @Name: CaoBox v1.0
+ * @author LinhNMT <w2ajax@gmail.com>
+ * @link http://code.google.com/p/caobox/
+ * @copyright Copyright &copy; 2009 phpbasic
+ */
+defined('_ROOT') or die(__FILE__);
+
+/*
+// list functions can hook ( functions were defined in core/hooks.php)
+	function web_header() // load first
+	function web_footer() // load last
+	function module_before() //load before module run
+	function module_after() // load after modul run
+	function url($arr_parametters = NULL)
+	function redirect($url = NULL)
+	function dateformat($date = NULL,$format = 'd/m/Y')
+	function output($string = NULL,$html  = 1)
+	function encrypt($string) // current we are  using md5
+	function cookie($name,$value,$path,$domain)
+*/
+?>

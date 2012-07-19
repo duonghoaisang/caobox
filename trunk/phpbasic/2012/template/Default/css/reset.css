@@ -1,0 +1,29 @@
+/* PHPBASIC Reset */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+body,p,div,form,ul,li,h1,h2,h3,h4,h5,h6{ margin: 0; padding: 0; }
+a,a:link,a:visited{
+	text-decoration: none;
+}
+img{ border: 0; }
+li{
+	list-style: none;
+}
