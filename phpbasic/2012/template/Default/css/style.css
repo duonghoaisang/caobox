@@ -1,0 +1,244 @@
+/* 
+	Copyright@ PHPBASIC v02
+*/
+body,code,td,th {
+	font-family:  Arial,Verdana, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 20px;
+	color: #000000;
+	
+}
+body{background-color: #CCCCCC;}
+#banner,#maincontent,#footer,#nav{
+	width: 960px;
+	margin: 0px auto 0px auto;
+	background: #ffffff;
+}
+
+#banner{ 
+	background: #ffffff url(../images/bg.gif);
+	height: 60px;
+	
+}
+#banner img{
+	margin: 10px 0px 10px 10px;
+}
+#nav ul li,#nav ul li a{
+	float: left;
+	display: block;
+	height: 20px;
+	color: #000;
+	font-size: 13px;
+}
+#nav ul li a{ padding: 3px 3px 3px 3px;}
+#nav ul li a:hover,#nav ul li a.active{
+	background: #B6D368;
+	color: #fff;
+}
+#nav ul li a.setting{
+	font-size: 10px;
+	font-style:italic;
+}
+#nav form{text-align: right;}
+#nav input,select{
+	border: 1px solid #999;
+	height: 18px;
+	vertical-align: top;
+}
+#nav input.button{
+	background: #fff;
+	height: 22px;
+}
+.toolbar a{
+	background: url(../images/new.gif) no-repeat;
+	padding-left: 20px;
+}
+
+#maincontent{ padding-top: 10px; }
+
+#content,#right{
+	float: left;
+	display: inline;
+	width: 680px;
+	text-align: justify;
+	margin-left: 10px;
+}
+.box{
+	border: 1px solid #eee;
+	margin-bottom: 10px;
+}
+.toolbar{
+	border: 0;
+	margin: 5px 0px 5px 0px;
+}
+.box h1.header{
+	background: #eef url(../images/grippy.png) no-repeat;
+	background-position: left center;
+	padding-left: 10px;
+	padding-top: 4px;
+	height: 25px;
+	font-size: 13px;
+}
+
+
+.box li{
+	padding: 5px;
+}
+
+
+.box a.favorite{
+	background: url(../images/watched_n.gif) no-repeat;
+	display: inline-block;
+	width: 20px;
+}
+.box  a.favorite:hover,.box  a.favorited{
+	background: url(../images/watched_y.gif) no-repeat;
+}
+
+.box h2.detail{
+	background: #eef;
+	margin-bottom: 10px;
+}
+
+.box  h2.title a{
+	color: #0028BD;
+	font-size: 13px;
+}
+.box  h2.title a:hover{
+	color: #FF6600;
+}
+
+.box span.comment{
+	background: url(../images/comment.png) no-repeat 2px 50%;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+.small{
+	font-size: 11px;
+}
+.date{
+	color: #ccc;
+}
+.noborder{ border: none; }
+
+
+
+/* Comments*/
+.comment{
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+.author,.comment h3.author{
+	background: #eef url(../images/user_comment.png) no-repeat;
+	margin: 5px 0px 5px 0px;
+	background-position: 2px 50%;
+	padding-left: 20px;
+	font-size: 11px;
+}
+.author { background-color: #ffffff; }
+.quote{
+	background: #EFEFEF;
+	border: 1px dashed gray;
+	padding: 10px;
+}
+#add_comment{
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	background: #ccc;
+}
+
+
+#right{ width: 240px; }
+#right .box_user{
+	
+}
+
+
+.content_toolbar{
+	text-align: right;
+}
+
+.emotion_on,.emotion_off{
+	background: url(../images/emotion.gif) no-repeat;
+	padding: 1px 0px 0px 20px;
+}
+
+/* Toolbar menu*/
+
+/*.menu_tool {
+	padding: 0;
+	height: 1em;
+	float: right;
+	margin-top: -30px;
+}
+.menu_tool li {
+	list-style: none;
+	float: left; }
+.menu_tool li a {
+	display: block;
+	padding: 3px 8px;
+	text-decoration: none; }
+.menu_tool li ul {
+	display: none; 
+	width: 10em; 
+	background-color: #eee;
+}
+.menu_tool li:hover ul, .menu_tool li.hover ul {
+	display: block;
+	position: absolute;
+	margin: 0;
+	padding: 0; 
+}
+.menu_tool li:hover li, .menu_tool li.hover li {
+	float: none; }
+.menu_tool li:hover li a, .menu_tool li.hover li a {
+	border-bottom: 1px solid #fff;
+	color: #000; }
+.menu_tool li li a:hover {
+	background-color: #8db3ff; 
+}
+*/
+
+.form{
+	margin-top: 20px;
+}
+.form h2{
+	margin-bottom: 20px;
+}
+.form label{
+	width: 120px;
+	display: block;
+	float: left;
+}
+.form input,textarea{
+	width: 200px;
+	border: 1px solid #eee;
+	margin-bottom: 10px;
+}
+.form .require{
+	margin-left: 5px;
+	color: red;
+}
+.form input.btn{
+	width: auto;
+}
+
+.bbcode_toolbar .quote{
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.reply_to{
+	float: right;
+	font-size: 10px;
+	margin-top: -10px;
+}
+a.btn_reply{
+	background: #eee;
+	border: 1px solid #ccc;
+	padding: 4px 10px 4px 10px;
+	margin-bottom: 10px;
+}

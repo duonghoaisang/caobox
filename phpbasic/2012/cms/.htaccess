@@ -1,0 +1,11 @@
+#Khong cho view file .htaccess tren trinh duyet
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+#ErrorDocument 404 "<a href=http://phpbasic.com>The page can't found</a>"
+#ErrorDocument 401 "<a href=http://phpbasic.com>Authorization Required</a>"
+#ErrorDocument 403 "<a href=http://phpbasic.com>Forbidden</a>"
+#ErrorDocument 500 "<a href=http://phpbasic.com>Internal Server Error</a>"
+
+RewriteEngine off

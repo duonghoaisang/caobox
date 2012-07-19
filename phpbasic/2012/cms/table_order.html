@@ -1,0 +1,59 @@
+<style type="text/css">
+.myDragClass{
+	background: #ccc;
+}
+</style>
+<script src="js/lib/jquery.js"></script>
+<script src="js/jquery.tablednd_0_5.js"></script>
+<script>
+$(document).ready(function(){
+	var begin = null;
+	$('#table-1 tbody.cat').tableDnD({
+		onDragClass: "myDragClass",
+		onDragStart: function(table, row) {
+			begin = $.tableDnD.serialize();
+		},
+		onDrop: function(table, row) {
+			var after = $.tableDnD.serialize();
+			if(begin != after) alert('Ajax');
+		}
+    });
+	var begin = null;
+	$('#table-1 tbody.pro').tableDnD({
+		onDragClass: "myDragClass",
+		onDragStart: function(table, row) {
+			begin = $.tableDnD.serialize();
+		},
+		onDrop: function(table, row) {
+		var str = '';
+			//alert(table.tr);
+			var after = $.tableDnD.serialize();
+			if(begin != after){
+				$.post('request.php', {'data':after},function(data){
+					//$('#data').html(data);
+				})
+			}
+		}
+    });
+})
+</script>
+<table id="table-1" cellspacing="0" cellpadding="2">
+	<tr id="h"><td>H</td><td>Number</td><td>Title</td></tr>
+    <tbody class="cat">
+    <tr id="1"><td>1</td><td>One</td><td>some text</td></tr>
+    <tr id="2"><td>2</td><td>Two</td><td>some text</td></tr>
+    <tr id="3"><td>3</td><td>Three</td><td>some text</td></tr>
+    <tr id="4"><td>4</td><td>Four</td><td>some text</td></tr>
+    <tr id="5"><td>5</td><td>Five</td><td>some text</td></tr>
+    <tr id="6"><td>6</td><td>Six</td><td>some text</td></tr>
+    </tbody>
+    <tbody class="pro">
+    <tr id="7"><td>7</td><td>One</td><td>pro some text</td></tr>
+    <tr id="2"><td>2</td><td>Two</td><td>pro some text</td></tr>
+    <tr id="3"><td>3</td><td>Three</td><td>pro some text</td></tr>
+    <tr id="9"><td>9</td><td>Four</td><td>pro some text</td></tr>
+    <tr id="5"><td>5</td><td>Five</td><td>pro some text</td></tr>
+    <tr id="6"><td>6</td><td>Six</td><td>pro some text</td></tr>
+    </tbody>
+</table>
+<div id="data"></div>
