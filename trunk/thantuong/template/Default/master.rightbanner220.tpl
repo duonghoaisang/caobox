@@ -1,0 +1,2 @@
+                   <!--BASIC rightbanner200-->
+	<p class="imageAdvSmall"><a href="{rightbanner200.intro}" title="{rightbanner200.name}"><img src="{_UPLOAD}{rightbanner200.image}" width="202" /></a></p><!--BASIC rightbanner200-->
