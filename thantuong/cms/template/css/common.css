@@ -1,0 +1,66 @@
+.hide{
+	display: none;
+}
+tr.show{
+	display: table-row;
+}
+p.show,div.show{
+	display: block;
+}
+
+span.show,img.show,a.show{
+	display: inline;
+}
+
+.error{
+	display: none;
+}
+
+.cms_overlay{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #000 url(../images/loader.gif) 50% 50% no-repeat;
+	z-index: 10000001;
+	opacity: 0.8;
+	top: 0;
+	left:0;
+	display: none;
+}
+
+.noscript{
+	background: #fff url(../images/warn.png) 10px 17px no-repeat; 
+	color: red; 
+	font-style: italic; 
+	padding: 20px 20px 20px 30px; 
+	margin: 0;
+}
+
+
+table td.td1{
+	width: 20%;
+}
+
+.folder{ 
+	margin-left: 16px;
+	margin-top: 4px;
+}
+
+.w100pc{
+	width: 77%;
+}
+span.description{
+	display: block;
+	margin-top: 5px;
+}
+
+.resize_toggle_advance table{
+	display: none;
+}
+.red{ color: red;}
+
+.cfg_title{
+	width: 100%;
+	height: 60px;
+	background: #eee;
+}
