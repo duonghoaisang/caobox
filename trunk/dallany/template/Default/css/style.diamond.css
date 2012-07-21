@@ -1,0 +1,133 @@
+#diamond{
+	margin-top: 70px;
+}
+#diamond .list{
+	width: 450px;
+	height: 444px;
+	overflow: hidden;
+	background: #000;
+	position: absolute;
+}
+
+#diamond .briefcopy{
+	margin-bottom: 5px;
+}
+
+#diamond .list .copy a{
+	width: 210px;
+	text-align: center;
+	height: 70px;
+	display: block;
+	float: left;
+	overflow: hidden;
+	border: 1px solid #000;
+	padding: 2px;
+	
+}
+
+#diamond .list .copy a:hover{
+	border: 1px solid #eee;
+}
+
+#diamond .overlapItem{
+	position: absolute;
+	background: #000;
+	z-index:100;
+}
+#diamond div.setlogo{
+	background: #000 url(../images/logo-dallany.png) no-repeat;
+}
+#diamond .close{
+	position: absolute;
+	right: 10px;
+	width: 24px;
+	bottom: 0;
+}
+#diamond .close a{
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: url(../images/close.png) no-repeat;
+}
+
+#diamond .productinfo{
+	position: absolute;
+	left: 50%;
+	width: 1024px;
+	margin-left: -512px;
+	bottom: 0;
+}
+#diamond .productinfo .col1,#diamond .productinfo .col2{
+	float: left;
+	position: relative;
+	width: 400px;
+}
+#diamond .productinfo .col2{
+	width: 620px;
+	text-align: center;
+}
+
+#diamond .productinfo .title{
+	margin: 0;
+	font-size: 14px;
+}
+#diamond .productinfo .desc{
+	width: 317px;
+}
+
+#diamond .productinfo .category,#diamond .productinfo .category{
+	position: absolute;
+	bottom: 0;
+	height: 146px;
+	width: 100%;
+	overflow: hidden;
+}
+#diamond .productinfo .category ul{
+	margin-left: 71px;
+    margin-top: -14px;
+}
+#diamond .productinfo .category ul li{
+
+}
+#diamond .productinfo .category ul li a{
+
+}
+#diamond .productinfo .category ul li a:hover,#diamond .productinfo .category ul li a.active{
+	font-weight: bold;
+	color:#ffcd4e;
+}
+
+
+#diamond .productinfo .viewer{
+	width: 672px;
+	height:118px;
+	position: relative;
+	overflow: hidden;
+}
+#diamond .productinfo  .slide{
+	position: absolute;
+}
+#diamond .productinfo .slide a{
+	float: left;
+	display: block;
+	width: 166px;
+	height: 116px;
+	border: 1px solid #000;
+	white-space:nowrap;
+	text-align: center;
+}
+#diamond .productinfo .slide a:hover,#diamond .productinfo .slide a.active{
+	border: 1px solid #eee;
+	
+}
+
+#diamond .imgdetail{
+	position: relative;
+	height: 368px;
+	overflow: hidden;
+}
+#diamond .imgdetail img{
+	position: absolute;
+	left: 0;
+	top: 0;
+}

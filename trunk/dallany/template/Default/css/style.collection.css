@@ -1,0 +1,174 @@
+/* CSS Document */
+
+#collection .fullimg{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -10;
+}
+
+
+#collection .fullimg img{
+	display: none;
+	position: absolute;
+	left:0;
+	top: 0;
+}
+
+
+
+#collection ul.listcat li{
+	float: left;
+	overflow: hidden;
+	display: none;
+	position: relative;
+	width: 0;
+}
+
+
+
+#collection ul.listcat li div.overlap{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100px;
+	background: #000;
+	opacity: .6;
+	filter:alpha(opacity=60);
+	
+}
+
+#collection .list{
+	width: 1024px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -512px;
+	margin-top: -100px;
+	height: 348px;
+}
+
+#collection .overlapItem{
+	position: absolute;
+	background: #111;
+	z-index:100;
+}
+
+#collection div.setlogo{
+	background: #000 url(../images/logo-dallany.png) no-repeat;
+}
+#collection .list ul{
+	overflow: auto;
+}
+
+#collection .list ul li a{
+	float: left;
+	display: block;
+	padding: 1px;
+}
+#collection .list ul li a,#collection .overlapItem{
+	width: 166px;
+	height :116px;
+	background: #000;
+
+}
+#collection .list ul li a{
+	text-align: center;
+}
+#collection .list ul li a:hover{
+	background: #fff;
+}
+#collection .close{
+	position: absolute;
+	right: 10px;
+	width: 24px;
+	bottom: 0;
+}
+#collection .close a{
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: url(../images/close.png) no-repeat;
+}
+
+#collection .productinfo{
+	position: absolute;
+	left: 50%;
+	width: 1024px;
+	margin-left: -512px;
+	bottom: 0;
+}
+#collection .productinfo .col1,#collection .productinfo .col2{
+	float: left;
+	position: relative;
+	width: 400px;
+}
+#collection .productinfo .col2{
+	width: 620px;
+	text-align: center;
+}
+
+#collection .productinfo .title{
+	margin: 0;
+	font-size: 14px;
+}
+#collection .productinfo .desc{
+	width: 317px;
+}
+
+#collection .productinfo .category,#collection .productinfo .category{
+	position: absolute;
+	bottom: 0;
+	height: 146px;
+	width: 100%;
+	overflow: hidden;
+}
+#collection .productinfo .category ul{
+	margin-left: 71px;
+    margin-top: -14px;
+}
+#collection .productinfo .category ul li{
+
+}
+#collection .productinfo .category ul li a{
+
+}
+#collection .productinfo .category ul li a:hover,#collection .productinfo .category ul li a.active{
+	font-weight: bold;
+	color:#ffcd4e;
+}
+
+
+#collection .productinfo .viewer{
+	width: 672px;
+	height:118px;
+	position: relative;
+	overflow: hidden;
+}
+#collection .productinfo  .slide{
+	position: absolute;
+}
+#collection .productinfo .slide a{
+	float: left;
+	display: block;
+	width: 166px;
+	height: 116px;
+	border: 1px solid #000;
+	white-space:nowrap;
+	text-align: center;
+}
+#collection .productinfo .slide a:hover,#collection .productinfo .slide a.active{
+	border: 1px solid #eee;
+	
+}
+#collection .imgdetail{
+	position: relative;
+	height: 368px;
+	overflow: hidden;
+}
+#collection .imgdetail img{
+	position: absolute;
+	left: 0;
+	top: 0;
+}

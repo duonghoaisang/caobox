@@ -1,0 +1,49 @@
+#homepage{
+	width: 419px;
+	font-weight: 900;
+	font-size: 11px;
+	position: absolute;
+}
+
+#homepage .intro{
+	background: url(../images/logo-home.png) no-repeat;
+	padding-top:  148px;
+	overflow: hidden;
+	width: 100%;
+}
+#homepage p{
+	margin: 10px;
+}
+#homepage  .copy{
+	overflow: auto;
+}
+
+#homepage .viewmore{
+	font-size: 16px;
+}
+
+
+#homepage .ourstory,#homepage .insurance{
+	display: none;
+	height: 35px;
+	overflow: hidden;
+}
+
+#homepage a.insurance_service{
+	color:#E28A20;
+
+}
+#homepage h2{
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+#homepage .insurance ul{
+	margin: 10px 10px 10px 40px;
+}
+
+#homepage .insurance ul li{
+	list-style: disc outside none;
+    margin-top: 5px;
+    padding-left: 5px;
+
+}

@@ -1,0 +1,125 @@
+#timepieces{
+	margin-top: 240px;
+}
+#timepieces .list{
+	width: 580px;
+	height: 444px;
+	overflow: hidden;
+	/*background: #000;*/
+	position: absolute;
+}
+
+#timepieces .list a.link{
+	height: 87px;
+	display: block;
+	/*float: left;*/
+	overflow: hidden;
+	text-align: center;
+	
+}
+
+#timepieces .list a:hover{
+}
+
+#timepieces .overlapItem{
+	position: absolute;
+	background: #000;
+	z-index:100;
+}
+#timepieces div.setlogo{
+	background: #000 url(../images/logo-dallany.png) no-repeat;
+}
+#timepieces .close{
+	position: absolute;
+	right: 10px;
+	width: 24px;
+	bottom: 0;
+}
+#timepieces .close a{
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: url(../images/close.png) no-repeat;
+}
+
+#timepieces .productinfo{
+	position: absolute;
+	left: 50%;
+	width: 1024px;
+	margin-left: -512px;
+	bottom: 0;
+}
+#timepieces .productinfo .col1,#timepieces .productinfo .col2{
+	float: left;
+	position: relative;
+	width: 400px;
+}
+#timepieces .productinfo .col2{
+	width: 620px;
+	text-align: center;
+}
+
+#timepieces .productinfo .title{
+	margin: 0;
+	font-size: 14px;
+}
+#timepieces .productinfo .desc{
+	width: 317px;
+}
+
+#timepieces .productinfo .category,#timepieces .productinfo .category{
+	position: absolute;
+	bottom: 0;
+	height: 146px;
+	width: 100%;
+	overflow: hidden;
+}
+#timepieces .productinfo .category ul{
+	margin-left: 71px;
+    margin-top: -14px;
+}
+#timepieces .productinfo .category ul li{
+
+}
+#timepieces .productinfo .category ul li a{
+
+}
+#timepieces .productinfo .category ul li a:hover,#timepieces .productinfo .category ul li a.active{
+	font-weight: bold;
+	color:#ffcd4e;
+}
+
+
+#timepieces .productinfo .viewer{
+	width: 672px;
+	height:118px;
+	position: relative;
+	overflow: hidden;
+}
+#timepieces .productinfo  .slide{
+	position: absolute;
+}
+#timepieces .productinfo .slide a{
+	float: left;
+	display: block;
+	width: 166px;
+	height: 116px;
+	border: 1px solid #000;
+	white-space:nowrap;
+	text-align: center;
+}
+#timepieces .productinfo .slide a:hover,#timepieces .productinfo .slide a.active{
+	border: 1px solid #eee;
+	
+}
+
+#timepieces .imgdetail{
+	position: relative;
+	height: 368px;
+	overflow: hidden;
+}
+#timepieces .imgdetail img{
+	position: absolute;
+	left: 0;
+	top: 0;
+}

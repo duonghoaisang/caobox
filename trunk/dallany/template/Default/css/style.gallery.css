@@ -1,0 +1,129 @@
+#gallery{
+	margin-top: 140px;
+	font-size: 11px;
+	font-weight: 900;
+}
+#gallery .list{
+	width: 524px;
+	height: 444px;
+	overflow: hidden;
+	background: #000;
+	position: absolute;
+}
+
+/*#gallery .list a{
+	width: 166px;
+	height: 106px;
+	display: block;
+	float: left;
+	overflow: hidden;
+	border: 1px solid #000;
+	
+}
+*/
+#gallery .list a:hover{
+	border: 1px solid #eee;
+}
+
+#gallery .overlapItem{
+	position: absolute;
+	background: #000;
+	z-index:100;
+}
+#gallery div.setlogo{
+	background: #000 url(../images/logo-dallany.png) no-repeat;
+}
+#gallery .close{
+	position: absolute;
+	right: 10px;
+	width: 24px;
+	bottom: 0;
+}
+#gallery .close a{
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: url(../images/close.png) no-repeat;
+}
+
+#gallery .productinfo{
+	position: absolute;
+	left: 50%;
+	width: 1024px;
+	margin-left: -512px;
+	bottom: 0;
+}
+#gallery .productinfo .col1,#gallery .productinfo .col2{
+	float: left;
+	position: relative;
+	width: 400px;
+}
+#gallery .productinfo .col2{
+	width: 620px;
+	text-align: center;
+}
+
+#gallery .productinfo .title{
+	margin: 0;
+	font-size: 14px;
+}
+#gallery .productinfo .desc{
+	width: 317px;
+}
+
+#gallery .productinfo .category,#gallery .productinfo .category{
+	position: absolute;
+	bottom: 0;
+	height: 146px;
+	width: 100%;
+	overflow: hidden;
+}
+#gallery .productinfo .category ul{
+	margin-left: 71px;
+    margin-top: -14px;
+}
+#gallery .productinfo .category ul li{
+
+}
+#gallery .productinfo .category ul li a{
+
+}
+#gallery .productinfo .category ul li a:hover,#gallery .productinfo .category ul li a.active{
+	font-weight: bold;
+	color:#ffcd4e;
+}
+
+
+#gallery .productinfo .viewer{
+	width: 672px;
+	height:118px;
+	position: relative;
+	overflow: hidden;
+}
+#gallery .productinfo  .slide{
+	position: absolute;
+}
+#gallery .productinfo .slide a{
+	float: left;
+	display: block;
+	width: 166px;
+	height: 116px;
+	border: 1px solid #000;
+	white-space:nowrap;
+	text-align: center;
+}
+#gallery .productinfo .slide a:hover,#gallery .productinfo .slide a.active{
+	border: 1px solid #eee;
+	
+}
+
+#gallery .imgdetail{
+	position: relative;
+	height: 368px;
+	overflow: hidden;
+}
+#gallery .imgdetail img{
+	position: absolute;
+	left: 0;
+	top: 0;
+}

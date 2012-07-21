@@ -1,0 +1,18 @@
+#catalog{
+	margin-top: 150px;
+	text-align:center;
+}
+
+#catalog .logo{
+	margin-left: 300px;
+	width: 634px;
+	height: 168px;
+	background: url(../images/logo-catalog.png) no-repeat;
+}
+
+#catalog .logosmall{
+	margin-left: 300px;
+	width: 425px;
+	height: 103px;
+	background: url(../images/logo-catalog-s.png) no-repeat;
+}

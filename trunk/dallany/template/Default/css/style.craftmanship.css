@@ -1,0 +1,45 @@
+#craftmanship{
+	margin-top: 70px;
+	font-size: 11px;
+	font-weight: 900;}
+#craftmanship .title{
+	text-align: right;
+}
+#craftmanship .list{
+	width: 478px;
+	height: auto;
+	overflow: hidden;
+	/*background: #262e30;*/
+	position: absolute;
+	padding:10px;
+	/*box-shadow: -10px 10px 30px #2b3335;*/
+	text-align:center;
+}
+
+#craftmanship .copy{
+	overflow: auto;
+}
+
+#craftmanship .viewer {
+	width: 480px;
+	height: 118px;
+	position: relative;
+	overflow: hidden;
+}
+#craftmanship .slide{
+	position: absolute;
+}
+#craftmanship .slide a {
+	float: left;
+	display: block;
+	width: 107px;
+	height: 137px;
+	border: 1px solid 
+	black;
+	white-space: nowrap;
+	text-align: center;
+	overflow: hidden;
+}
+#craftmanship .slide a:hover,#craftmanship .slide a.active{
+	border: 1px solid #eee;
+}
