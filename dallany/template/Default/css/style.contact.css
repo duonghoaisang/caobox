@@ -1,0 +1,82 @@
+#contact{
+	font-weight: 900;
+	font-size: 11px;
+	position: absolute;
+	height: 500px;
+	margin-top: 70px;
+}
+#contact h2{
+	font-size: 18px;
+	text-transform: uppercase;
+}
+#contact .copy{
+	width: 419px;
+	background: #A2CEE9;
+	/*border: 1px solid #333;*/
+	float:left;
+	padding-bottom: 14px;
+	border: 2px solid #000033;
+	overflow: auto;
+	height:432px;
+	color: #000;
+	overflow-x: hidden;
+}
+#contact .info{
+	background: none repeat scroll 0 0 #A2CEE9;
+    height: 124px;
+    width: 420px;
+	color: #000;
+	text-align: center;
+}
+#contact .info strong{
+	font-size: 12px;
+}
+#contact .title{
+	font-size: 17px;
+    font-weight: normal;
+    padding: 4px;
+}
+#contact .required{
+	border-top: 2px dotted #fff;
+	margin-top: 8px;
+    color: green;
+    padding: 4px;}
+#contact .white{
+	color: #fff;
+}
+#contact .col1{
+	width: 120px;
+}
+#contact .location{
+	float: left;
+    width: 208px;
+
+}
+#contact .location .col1{
+
+}
+#contact .location .col2{
+
+}
+
+#contact table{
+	margin-left: 12px;
+}
+
+#contact input,#contact textarea,#contact select{
+	border: 1px solid;
+    margin-top: 2px;
+    padding: 3px;
+    width: 182px;
+}
+#contact .no_width{
+	width: auto;
+}
+#contact .btn{
+	width:auto;
+
+}
+#contact .bottom_send{
+	padding-right: 10px;
+	padding-left: 5px;
+}

@@ -1,0 +1,18 @@
+#timepieces_kind{
+	margin-top: 150px;
+	text-align: center;
+}
+
+#timepieces_kind .logo{
+	margin-left: 300px;
+	width: 634px;
+	height: 168px;
+	background: url(../images/logo-timepieces_kind.png) no-repeat;
+}
+
+#timepieces_kind .logosmall{
+	margin-left: 300px;
+	width: 425px;
+	height: 103px;
+	background: url(../images/logo-timepieces_kind-s.png) no-repeat;
+}

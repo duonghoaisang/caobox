@@ -1,0 +1,168 @@
+#special{
+	margin-top: 70px;
+	font-size: 11px;
+	font-weight: 900;
+}
+#special .list{
+	height: 444px;
+	overflow: hidden;
+	/*background: #262e30;*/
+	position: absolute;
+	padding: 10px;
+	/*box-shadow: -17px 19px 25px #2b3335;*/
+}
+#special .list .copy{
+	overflow: auto;
+}
+#special .list .briefcopy{
+	padding-top: 10px;
+}
+#special .list,#special .list img{
+	width: 540px;
+}
+
+/*#special .list a{
+	width: 166px;
+	height: 106px;
+	display: block;
+	float: left;
+	overflow: hidden;
+	border: 1px solid #000;
+	
+}
+
+#special .list a:hover{
+	border: 1px solid #eee;
+}
+*/
+#special .overlapItem{
+	position: absolute;
+	background: #000;
+	z-index:100;
+}
+#special div.setlogo{
+	background: #000 url(../images/logo-dallany.png) no-repeat;
+}
+#special .close{
+	position: absolute;
+	right: 10px;
+	width: 24px;
+	bottom: 0;
+}
+#special .close a{
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: url(../images/close.png) no-repeat;
+}
+
+#special .productinfo{
+	position: absolute;
+	left: 50%;
+	width: 1024px;
+	margin-left: -512px;
+	bottom: 0;
+}
+#special .productinfo .col1,#special .productinfo .col2{
+	float: left;
+	position: relative;
+	width: 400px;
+}
+#special .productinfo .col2{
+	width: 620px;
+	text-align: center;
+}
+
+#special .productinfo .title{
+	margin: 0;
+	font-size: 14px;
+}
+#special .productinfo .desc{
+	width: 317px;
+}
+
+#special .productinfo .category,#special .productinfo .category{
+	position: absolute;
+	bottom: 0;
+	height: 146px;
+	width: 100%;
+	overflow: hidden;
+}
+#special .productinfo .category ul{
+	margin-left: 71px;
+    margin-top: -14px;
+}
+#special .productinfo .category ul li{
+
+}
+#special .productinfo .category ul li a{
+
+}
+#special .productinfo .category ul li a:hover,#special .productinfo .category ul li a.active{
+	font-weight: bold;
+	color:#ffcd4e;
+}
+
+
+#special .productinfo .viewer{
+	width: 672px;
+	height:118px;
+	position: relative;
+	overflow: hidden;
+}
+#special .productinfo  .slide{
+	position: absolute;
+}
+#special .productinfo .slide a{
+	float: left;
+	display: block;
+	width: 166px;
+	height: 116px;
+	border: 1px solid #000;
+	white-space:nowrap;
+	text-align: center;
+}
+#special .productinfo .slide a:hover,#special .productinfo .slide a.active{
+	border: 1px solid #eee;
+	
+}
+
+#special .imgdetail{
+	position: relative;
+	height: 368px;
+	overflow: hidden;
+}
+#special .imgdetail img{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+
+#special .viewer {
+	width: 540px;
+	height: 118px;
+	position: relative;
+	overflow: hidden;
+}
+#special .slide{
+	position: absolute;
+}
+#special .slide a {
+	float: left;
+	display: block;
+	width: 151px;
+	height: 137px;
+	border: 1px solid 
+	black;
+	white-space: nowrap;
+	text-align: center;
+	overflow: hidden;
+}
+#special .slide a:hover,#special .slide a.active{
+	border: 1px solid #eee;
+}
+#special .list .title{
+	overflow: hidden;
+	height: 350px;
+}

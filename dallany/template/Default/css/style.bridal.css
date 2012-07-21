@@ -1,0 +1,16 @@
+#bridal{
+	margin-top: 212px;
+	text-align: center;
+}
+
+.header .menu_bridal_page{
+	background-color: #B28A16;
+}
+
+#bridal .logo{
+	margin-left: -445px;
+	width: 381px;
+	height: 488px;
+	background: url(../images/logo-bridal.png) no-repeat;
+}
+
