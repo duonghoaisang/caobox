@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jMarqueeScroll</title>
+<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="jmarquee.js"></script>
+<style type="text/css">
+.jscroller_horz{
+	width: 650px;
+	background: #ccc;
+	height: 50px;
+	overflow: hidden;
+	position: relative;
+}
+.jscroller_horz ul {
+	margin: 0;
+	padding: 0;
+	position: relative; 
+	overflow: hidden; 
+}
+.jscroller_horz ul  li{
+	list-style: none;
+	float: left;
+	white-space: nowrap;
+}
+
+.jscroller_vert{
+	width: 100px;
+	background: #ccc;
+	height: 50px;
+	overflow: hidden;
+	position: relative; 
+}
+.jscroller_vert ul {
+	margin: 0;
+	padding: 0;
+	position: relative; 
+	overflow: hidden; 
+}
+.jscroller_vert ul  li{
+	list-style: none;
+	width: 100px; 
+}
+
+</style>
+</head>
+
+<body>
+<div  id="scroll_left" class="jscroller_horz" style="margin-left: 100px;">
+	<ul>
+	<li>1AAA AAA AAA A A A A A AA A AA A A A1</li>
+	<li>BB AAA AAA A A A A A AA A AA A A BBB B</li>
+	<li>CC AAA AAA A A A A A AA A AA A A CC CC C</li>
+	</ul>
+</div>
+<div  id="scroll_right" class="jscroller_horz" style="margin-left: 200px; width: 150px;">
+	<ul>
+	<li>UU U UU U U U UU U UU U UU U </li>
+	<li>ZZ Z Z Z Z Z Z Z Z Z Z  Z Z Z</li>
+	<li>WW WW W W W WW W W W W</li>
+	</ul>
+</div>
+
+<div  id="scroll_up" class="jscroller_vert">
+	<ul>
+	<li>UU U UU U U U UU U UU U UU U </li>
+	<li>ZZ Z Z Z Z Z Z Z Z Z Z  Z Z Z</li>
+	<li>WW WW W W W WW W W W W</li>
+	</ul>
+</div>
+<p>Down</p>
+<div  id="scroll_down" class="jscroller_vert">
+	<ul>
+	<li>UU U UU U U U UU U UU U UU U </li>
+	<li>ZZ Z Z Z Z Z Z Z Z Z Z  Z Z Z</li>
+	<li>WW WW W W W WW W W W W</li>
+	</ul>
+</div>
+<marquee behavior="slide" direction="right" width="100">Aadfasdfs dfa dfas dfdsfsad fd sfsa fsadf sadfs dfasdf sdafas fdsafsB</marquee>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#scroll_left').jscroller();
+	$('#scroll_right').jscroller({direction: 'right'});
+	$('#scroll_up').jscroller({direction: 'up'});
+	$('#scroll_down').jscroller({direction: 'down'});
+});
+</script>			
+
+</body>
+</html>
