@@ -1,0 +1,41 @@
+/* IMPORTANT CSS - Please don't remove this rows if you are not sure. */
+.mscroller_horz,.mscroller_vert,.mscroller_horz ul.scroller,.mscroller_vert ul.scroller{
+	overflow: hidden;
+	position: relative;
+}
+/* End IMPORTANT */
+
+
+.mscroller_horz{
+	width: 150px;
+	height: 50px;
+	margin: 10px 40px 10px 0px; 
+	color: #333;
+	background-color:#EFEFEF;
+
+}
+.mscroller_horz ul.scroller {
+	margin: 0;
+	padding: 0;
+}
+.mscroller_horz ul.scroller  li{
+	list-style: none;
+	float: left;
+	white-space: nowrap;
+}
+
+.mscroller_vert{
+	width: 100px;
+	height: 50px;
+	margin: 10px 40px 10px 0px; 
+	color: #333;
+	background-color:#EFEFEF;
+}
+.mscroller_vert ul.scroller {
+	margin: 0;
+	padding: 0;
+}
+.mscroller_vert ul.scroller  li{
+	list-style: none;
+	width: 100px; 
+}
