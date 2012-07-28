@@ -1,0 +1,145 @@
+ALTER TABLE `php_tutorial` CHANGE `t_id` `id` INT( 2 ) NOT NULL AUTO_INCREMENT ,
+CHANGE `t_parentid` `parentid` TINYINT( 2 ) NULL DEFAULT '0',
+CHANGE `t_name` `name` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `t_rewrite` `rewrite` VARCHAR( 15 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `t_meta_keyword` `meta_keyword` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `t_meta_description` `meta_description` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `t_display` `active` TINYINT( 1 ) NULL DEFAULT '1',
+CHANGE `t_order` `order` INT( 2 ) NULL DEFAULT '0',
+CHANGE `t_google_direct` `google_direct` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `t_root` `root` VARCHAR( 10 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ;
+
+ ALTER TABLE `php_discuss` CHANGE `d_id` `id` INT( 6 ) UNSIGNED NOT NULL AUTO_INCREMENT ,
+CHANGE `d_article_id` `articleid` INT( 5 ) NULL DEFAULT '0',
+CHANGE `d_html` `ishtml` TINYINT( 1 ) NULL DEFAULT '0',
+CHANGE `d_title` `title` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `d_content` `content` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `d_author` `author` VARCHAR( 50 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `d_author_id` `userid` INT( 5 ) NULL DEFAULT NULL ,
+CHANGE `d_date` `date` TIMESTAMP NULL ;
+
+
+ ALTER TABLE `php_article` CHANGE `a_id` `id` INT( 10 ) NOT NULL AUTO_INCREMENT ,
+CHANGE `a_tutorial_id` `catid` SMALLINT( 2 ) NULL DEFAULT '-1',
+CHANGE `a_type_id` `typeid` TINYINT( 2 ) NULL DEFAULT '1',
+CHANGE `a_first_postid` `firstid` INT( 10 ) NULL DEFAULT NULL ,
+CHANGE `a_last_postid` `lastid` INT( 10 ) NULL DEFAULT '-1',
+CHANGE `a_posts` `posts` INT( 5 ) NULL DEFAULT '0',
+CHANGE `a_display` `active` TINYINT( 1 ) NULL DEFAULT '1',
+CHANGE `a_order` `sorted` SMALLINT( 2 ) NULL DEFAULT '0' ;
+
+ ALTER TABLE `php_article_type` CHANGE `article_type_id` `id` TINYINT( 2 ) NOT NULL AUTO_INCREMENT ,
+CHANGE `article_type_name` `name` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `article_type_rewrite` `rewrite` VARCHAR( 20 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `article_type_display` `active` TINYINT( 1 ) NULL DEFAULT '1',
+CHANGE `article_type_order` `sorted` TINYINT( 4 ) NULL DEFAULT '0',
+CHANGE `article_type_ping_top` `stinky` TINYINT( 1 ) NULL DEFAULT '0' ;
+
+RENAME TABLE `php_article_type`  TO `php_type` ;
+
+
+ ALTER TABLE `php_article_attributes` CHANGE `a_id` `id` INT( 10 ) NOT NULL DEFAULT '0',
+CHANGE `a_rewrite` `rewrite` VARCHAR( 50 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `a_meta_title` `meta_title` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `a_tag` `tag` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ;
+
+
+RENAME TABLE `php_article_attributes`  TO `php_attributes` ;
+RENAME TABLE `php_tutorial`  TO `php_category` ;
+RENAME TABLE `php_article`  TO `php_content` ;
+ ALTER TABLE `php_discuss` CHANGE `articleid` `contentid` INT( 5 ) NULL DEFAULT '0' ;
+RENAME TABLE `php_discuss`  TO `php_comment` ;
+ALTER TABLE `php_content` ADD `mark` TINYINT( 1 ) NULL DEFAULT '0';
+
+
+
+########
+ALTER TABLE `php_user` ADD `u_setting` VARCHAR( 255 ) NULL DEFAULT NULL;
+ ALTER TABLE `php_user` CHANGE `u_id` `id` INT( 5 ) NOT NULL AUTO_INCREMENT ,
+CHANGE `u_admin` `isadmin` TINYINT( 1 ) NULL DEFAULT '0',
+CHANGE `u_name` `username` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `u_display` `isdisplay` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `u_mail` `email` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `u_pass` `password` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `u_date_join` `date_join` DATETIME NULL DEFAULT NULL ,
+CHANGE `u_last_login` `last_login` DATETIME NULL DEFAULT NULL ,
+CHANGE `u_signature` `signature` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `u_website` `website` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `u_setting` `data` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ;
+
+##
+CREATE TABLE `php_boxes` (
+`id` INT( 3 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NULL ,
+`funct` VARCHAR( 30 ) NULL ,
+`args` VARCHAR( 255 ) NULL ,
+`cond` VARCHAR( 255 ) NULL ,
+`isdefault` TINYINT( 1 ) NULL DEFAULT '0'
+) ENGINE = MYISAM CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+ ALTER TABLE `php_userlink` CHANGE `link_id` `id` INT( 5 ) NOT NULL AUTO_INCREMENT ,
+CHANGE `link_userid` `userid` INT( 5 ) NULL DEFAULT NULL ,
+CHANGE `link_date` `date` DATETIME NULL DEFAULT NULL ,
+CHANGE `link_title` `title` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `link_url` `url` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `link_content` `desc` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `link_acl` `acl` TINYINT( 1 ) NULL DEFAULT '0' ;
+
+
+
+#view
+CREATE VIEW php_view_data AS SELECT cnt. *,c.rewrite as c_rewrite,t.stinky,t.rewrite t_rewrite , cmt.title, cmt.content, cmt.author, cmt.`date` , cmt.userid, cmt.ishtml,att.rewrite,att.meta_title,att.tag
+FROM (`php_content` cnt, php_comment cmt,php_type t,php_category c)
+LEFT JOIN php_attributes att ON att.id = cnt.id
+WHERE cnt.firstid = cmt.id AND cnt.typeid = t.id AND c.id = cnt.catid;
+
+
+#
+CREATE TABLE `php_manual_cat` (
+`id` INT( 5 ) NOT NULL ,
+`parentid` INT( 5 ) NULL DEFAULT '0',
+`name` VARCHAR( 255 ) NULL ,
+`orderid` INT( 5 ) NULL ,
+`root` VARCHAR( 10 ) NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+
+INSERT INTO `php_manual_cat` (
+`id` ,
+`parentid` ,
+`name` ,
+`orderid` ,
+`root`
+)
+VALUES (
+'1', '0', 'PHP Manual', '1', 'php'
+), (
+'2', '0', 'MySQL', '0', 'mysql'
+);
+
+ INSERT INTO php_manual_cat( id, parentid, name, orderid, `root` )
+SELECT id, parentid, name, `order` , `root`
+FROM `php_category`
+WHERE `root` != '' ;
+
+ALTER TABLE `php_content` ADD `thank` INT( 5 ) NULL DEFAULT '0';
+
+ ALTER TABLE `php_userdoc` CHANGE `doc_id` `id` INT( 5 ) NOT NULL AUTO_INCREMENT ,
+CHANGE `doc_userid` `userid` INT( 5 ) NULL DEFAULT '0',
+CHANGE `doc_date` `date` DATETIME NULL DEFAULT '0000-00-00 00:00:00',
+CHANGE `doc_title` `title` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ,
+CHANGE `doc_content` `content` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL ;
+
+
+ ALTER TABLE `php_user_article` CHANGE `my_articleid` `contentid` INT( 10 ) NOT NULL ,
+CHANGE `my_userid` `userid` INT( 10 ) NOT NULL ,
+CHANGE `my_date` `date` DATETIME NULL DEFAULT NULL ;
+
+RENAME TABLE `php_user_article`  TO `php_favorite` ;
+RENAME TABLE `php_userdoc`  TO `php_docs` ;
+RENAME TABLE `php_userlink`  TO `php_link` ;
+ ALTER TABLE `php_comment` CHANGE `date` `date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP  ;
+
+
+ ALTER TABLE `php_content` CHANGE `active` `active` TINYINT( 1 ) NULL DEFAULT '0' ;
+
