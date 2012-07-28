@@ -28,7 +28,7 @@ class DB extends bDataStore{
 		if($this->cache && !file_exists($file)){
 			if(!is_dir($this->cache.$subdir)){
 				@mkdir($this->cache.$subdir);
-				@chmod($this->cache.$subdir);
+				@chmod($this->cache.$subdir, 0777);
 			}
 			$fp = @fopen($file,'w');
 			if($fp){
