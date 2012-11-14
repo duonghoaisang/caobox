@@ -67,7 +67,7 @@ class ClassModel extends Model{
 		return $aField;
 	}
 	
-	function input_type($name,$c,$status = false,$params = ''){
+	function input_type($name,$c,$status = false,$params = '',$date = false){
 		$type = array(
 			'input'		=>'Input',
 			'textarea'	=>'Textarea',
@@ -75,6 +75,9 @@ class ClassModel extends Model{
 		);
 		if($status){
 			$type['status'] = 'As status field';
+			
+		}
+		if($date){
 			$type['date']	= 'Input date';
 		}
 		$str = '<select name="'.$name.'" '.($params?$params:'').'>';
