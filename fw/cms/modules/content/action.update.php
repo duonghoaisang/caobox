@@ -9,6 +9,7 @@ defined('_ROOT') or die(__FILE__);
 
 $fields = $oMaster->fields('content');
 $ln_fields = $oMaster->fields('content_ln');
+
 if($_POST){
 	// update main
 	//print_r($_POST);exit();
