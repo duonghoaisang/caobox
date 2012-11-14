@@ -21,14 +21,33 @@ class CaoBox{
 	var $error_display = true;
 	var $error_log = false;
 	var $error_log_path = '';
+	var $magic_quote_gpc = true;// = get_magic_quotes_gpc();
 	
 	function __construct(){	
+		
 	}
 	
 	
 	function error_handle($error_report = E_ALL,$error_display, $error_log, $error_log_path){
-		set_error_handler(array(&$this,'error_system'));
+		ini_set('display_errors','On');
 		error_reporting($error_report);
+		//error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED);
+		if(get_magic_quotes_runtime()){
+			if(function_exists('set_magic_quotes_runtime')){
+				set_magic_quotes_runtime(false);
+			}
+		}
+		if(get_magic_quotes_gpc()){
+			function strip_value(&$value){
+				$value = stripslashes($value);
+			}
+			array_walk_recursive($_POST, 'strip_value');
+			array_walk_recursive($_GET, 'strip_value');
+			array_walk_recursive($_SESSION, 'strip_value');
+			array_walk_recursive($_COOKIE, 'strip_value');
+		}
+		set_error_handler(array(&$this,'error_system'));
+		
 		$this->error_display = $error_display;
 		$this->error_log = $error_log;
 		$this->error_log_path = $error_log_path;
