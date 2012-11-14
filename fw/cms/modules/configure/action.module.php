@@ -77,7 +77,7 @@ foreach($fields as  $rs){
 		$rs['name'] = $data['main_fields'][$rs['code']]['name'];
 		$rs['number'] = $data['main_fields'][$rs['code']]['number']?$data['main_fields'][$rs['code']]['number']:0;
 		$rs['cls_status'] = $data['main_fields'][$rs['code']]['type'] == 'status'?'':'hide';
-		$rs['type'] = $oClass->input_type('main_fields['.$rs['code'].'][type]', $data['main_fields'][$rs['code']]['type'],true,' onchange="fields_status(this);"');
+		$rs['type'] = $oClass->input_type('main_fields['.$rs['code'].'][type]', $data['main_fields'][$rs['code']]['type'],true,' onchange="fields_status(this);"',true);
 		$rs['status_default'] = $oClass->input_status_default('main_fields['.$rs['code'].'][status_default]', $data['main_fields'][$rs['code']]['status_default']);
 		
 		$rs['description'] = $data['main_fields'][$rs['code']]['description'];
@@ -114,7 +114,7 @@ if($request['module'] == 'content'){
 			$rs['require_checked'] = $data['cat_fields'][$rs['code']]['require']?'checked':'';
 			$rs['status_checked'] = $data['cat_fields'][$rs['code']]['status']?'checked':'';
 			$rs['name'] = $data['cat_fields'][$rs['code']]['name'];
-			$rs['type'] = $oClass->input_type('cat_fields['.$rs['code'].'][type]', $data['cat_fields'][$rs['code']]['type']);
+			$rs['type'] = $oClass->input_type('cat_fields['.$rs['code'].'][type]', $data['cat_fields'][$rs['code']]['type'],false,NULL, true);
 			$rs['description'] = $data['cat_fields'][$rs['code']]['description'];
 			$rs['require_msg'] = $data['cat_fields'][$rs['code']]['require_msg'];
 			$rs['sortorder'] = intval($data['cat_fields'][$rs['code']]['sortorder']);
