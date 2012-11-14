@@ -19,11 +19,12 @@ $cfg['prefix'] 		= 'php_';
 //
 $cfg['lang'] = 'vn';
 $cfg['session_handle'] = '';// user / file
-$cfg['error_report'] = E_ALL;// & ~E_WARNING & ~E_NOTICE;
+$cfg['error_report'] = E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED;
 $cfg['error_display'] = true;
 $cfg['error_log'] = false;
 $cfg['error_log_path'] = _ROOT.'data/log/';
 $cfg['server_var'] = 'REQUEST_URI';
+$cfg['url_file_default'] = 'index.php';
 $cfg['cache'] = false;
 $cfg['gzip'] = true;
 
