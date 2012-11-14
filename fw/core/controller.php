@@ -27,6 +27,7 @@ class Controller extends CaoBox{
 	//
 	function Controller($rewrite = false,$htaccess = false){
 		/////
+		
 		parent::error_handle($GLOBALS['cfg']['error_report'],$GLOBALS['cfg']['error_display'],$GLOBALS['cfg']['error_log'],$GLOBALS['cfg']['error_log_path']);
 		
 		$this->uri = rtrim($_SERVER[$GLOBALS['cfg']['server_var']],'\\/').'/';
@@ -42,7 +43,7 @@ class Controller extends CaoBox{
 					$this->params = explode('/',ltrim($this->uri,'/'));
 				}
 			}else{
-				$file = $htaccess===false?'index.php':$htaccess;
+				$file = $htaccess===false?$GLOBALS['cfg']['url_file_default']:$htaccess;
 				$tmp = explode('/'.$file.'/',$this->uri);
 				$this->params = explode('/',isset($tmp[1])?$tmp[1]:'');
 				$this->root_dir = "./$file/";
