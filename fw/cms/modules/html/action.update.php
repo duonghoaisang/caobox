@@ -11,7 +11,7 @@ $ln_fields = $oMaster->fields('html_ln');
 
 $error = NULL;
 if($_POST){
-	//print_r($_POST); print_r($_FILES);exit();
+	//print_r($_POST);exit();
 	//foreach($required_fields as $v) if(!$_POST[$v])
 	// update main
 	
@@ -105,9 +105,26 @@ if($_POST){
 		$arr['web_desc'] = $_POST['web_desc'];
 		$arr['file_extra'] = serialize($file_extra);
 		$arr['fields_extra'] = serialize($_POST['fields_extra']);
-		$oClass->update($request['id'],$arr);
-		
-		$lastid = $request['id'];
+		$arr['draft'] = 0;
+		if($_POST['btn_preview']){
+			if($_POST['draft_id']){
+				$oClass->update($_POST['draft_id'],$arr);
+				$lastid = $_POST['draft_id'];
+			}else{
+				$lastid_result= $oClass->lastid();
+				$lastid = $lastid_result->fetch();
+				$lastid = $lastid['lastid'] + 1;
+				$arr['draft'] = $request['id'];
+				$oClass->insert($lastid ,$arr);
+				
+			}
+		}else{
+			$oClass->update($request['id'],$arr);
+			$lastid = $request['id'];
+			if($_POST['draft_id']){
+				$oClass->delete($_POST['draft_id']);
+			}
+		}
 		
 		//die('----update success---');
 	}
@@ -257,6 +274,11 @@ if($_POST){
 */
 	if(!$error){
 		clear_sql_cache();
+		
+		if($_POST['btn_preview']){
+			$result_data = array('url_preview'=>$cfg_type['url_preview']);
+			die(''.addslashes(str_replace(array('$id'),array($lastid),$cfg_type['url_preview'])).':'.$lastid.'');
+		}
 		$_SESSION['updated'] = true;
 		//$hook->redirect('?'.http_build_query($_GET,NULL,'&'));
 	}else{
@@ -335,6 +357,13 @@ if(!$cat->num_rows()){
 	$request['hide_no_html_record'] = 'hide';
 }
 $data = $cat->fetch();
+
+$draft_data = $oClass->get_draft($request['id']);
+$draft = $draft_data->fetch();
+$request['draft_id'] = 0;
+if($draft){
+	$request['draft_id'] = $draft['id'];
+}
 $required_fields = array();
 $str_main_fields = array();
 foreach($cfg_type['main_fields'] as $code=>$info){
@@ -469,6 +498,6 @@ if($cfg_type['fields_extra']['name']){
 		
 	}
 }
-
+if($cfg_type['url_preview']) $tpl->box('btn_preview');
 
 ?>

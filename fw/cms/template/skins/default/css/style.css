@@ -784,6 +784,7 @@ table.table_list .ondrag-list{
 			table.table_list .th-checkbox input{ }
 		table.table_list .th-name		{  font-size:13px; font-weight:700; text-align:left; padding-right:15px}
 			table.table_list td.th-name a	{ color:#666;}
+			table.table_list td.th-name a.draft	{ color:red; font-weight: normal; font-style: italic;}
 			table.table_list td.th-name a:hover{ color:#0084FF; text-decoration:none}
 		table.table_list .th-date		{ width:120px; text-align:left; vertical-align:middle}
 			table.table_list td.th-date	{ color:#999; font-size:12px;}

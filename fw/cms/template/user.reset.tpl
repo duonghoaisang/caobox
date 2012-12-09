@@ -6,6 +6,10 @@
 <div class="error">{msg}</div>
 
   <table width="100%" border="0" cellspacing="0" cellpadding="1" class="table-Form1">
+  <tr>
+      <td class="textLabel">{lang.current_password} <span class="red">*</span></td>
+      <td><input name="current_password" type="password" title="Please enter your current password" id="title"></td>
+    </tr>
     <tr>
       <td class="textLabel">{lang.new_password} <span class="red">*</span></td>
       <td><input name="password" type="password" title="Please enter your password" id="title"></td>
@@ -25,7 +29,7 @@
 </form>
 <script type="text/javascript">
 var opt = {
-		required: ['password','confirm'],
+		required: ['current_password','password','confirm'],
 		lang: 'vn'
 	};
 	$('form#freset').validate(opt);

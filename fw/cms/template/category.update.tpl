@@ -3,7 +3,11 @@
 	<div class="hide breadcrumb_cat">{xpath}</div><!--BOX breadcrumb_cat-->
 	<a href="{http_referer}" class="btn btn_back r">&lt; {lang.back}</a>
 </div>
-<div class="form"><form action="" method="post" enctype="multipart/form-data" name="form1" id="fcontent">
+<div class="form"><form action="" method="post" enctype="multipart/form-data" name="fcontent" id="fcontent">
+<input type="hidden" name="draft_id" value="{draft_id}" />
+	<input type="hidden" name="draft_id" value="{draft_id}" />
+	<input type="hidden" name="draft" value="{draft}" />
+
 <!--BOX language_tab-->
 <div class="language_tab"><!--BASIC language-->
 <a href="#" onclick="showLangTab('{language.ln}',this);" {language.tab_default}>{language.ln_name}</a> <!--BASIC language--></div>
@@ -105,6 +109,7 @@
   </table>
   <div class="table_list {hide_no_languages}" align="right">
 	<input type="submit" class="btn" name="Submit" value="Save">
+	<!--BOX btn_preview--><input type="submit" class="btn btn_preview" name="btn_preview"  value="{lang.btn_preview}"><!--BOX btn_preview-->
 	<input type="button" class="btn btn_cancel" name="" value="Cancel" onclick="location.href='{http_referer}';">
   </div>
 </form></div>
@@ -115,6 +120,7 @@
 		lang: '{language}'
 	};
 	if({access_action} == '') opt['disabled'] = '{lang.user_no_access}';
+	$('form#fcontent').preview();
 	$('form#fcontent').validate(opt);
 
 </script>

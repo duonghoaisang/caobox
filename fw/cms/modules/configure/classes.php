@@ -25,7 +25,7 @@ class ClassModel extends Model{
 	}
 	
 	function check_html($id){
-		return $this->db->query("SELECT id FROM ".$this->prefix."html WHERE id = ".intval($id));
+		return $this->db->query("SELECT id,draft FROM ".$this->prefix."html WHERE id = ".intval($id));
 	}
 	
 	function insert_html($id){

@@ -22,8 +22,10 @@ while($rs = $cat->fetch()){
 }
 $cat = $oConfigure->getMod("`module` = 'html'");
 while($rs = $cat->fetch()){
-	$result = $oClass->check_html($rs['typeid']);
-	$rs['plus'] = $result->num_rows()?'':' <a href="#" onclick="newHTMLCfg('.$rs['typeid'].');return false;"><img src="template/images/icons_'.$icons.'/plus.jpg" border="0" /></a>';
+	$result = $oClass->check_html($rs['typeid'])->fetch();
+	//$tmp = $result->fetch();
+	//print_r($tmp);
+	$rs['plus'] = $result && $result['draft'] == 0 ?''.$tmp['draft']:' <a href="#" onclick="newHTMLCfg('.$rs['typeid'].');return false;"><img src="template/images/icons_'.$icons.'/plus.jpg" border="0" /></a>';
 	$tpl->assign($rs,'cfg_html');
 }
 

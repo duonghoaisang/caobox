@@ -4,9 +4,17 @@
 <p>&nbsp;</p>
 <h2 class="cfg_title">Generation</h2>
 <table width="100%" border="0" cellspacing="1" cellpadding="1" class="table-Form1 table_list">
-        <tr>
+      <tr>
         <td width="21%">Name</td>
         <td width="79%"><input name="name" class="no_width" type="text" id="name" value="{name}" /></td>
+      </tr>
+      <tr>
+        <td>URL Preview</td>
+        <td><input name="url_preview" class="no_width" type="text" id="name" value="{url_preview}" />
+        <br />Example:
+        <br /> product/$id
+        <br />product/$catid/$id
+        </td>
       </tr>
       <tr>
         <td>Description</td>
@@ -720,6 +728,14 @@ Max </td>
    View product in category<br />
    <input name="act[]" type="checkbox" class="no_width" id="act[]" value="drapdrop_cat" {drapdrop_cat_checked} /> Enable drap-n-drop category</td>
   </tr>
+  <tr>
+        <td>Category URL Preview</td>
+        <td><input name="cat_url_preview" class="no_width" type="text" value="{cat_url_preview}" />
+        <br />Example:
+        <br /> product/$catid
+        <br />product/$parentid/$catid
+        </td>
+      </tr>
    <tr>
      <td valign="top">Template update </td>
      <td><input name="cattpl_update" type="text" id="cattpl_update" value="{cattpl_update}" /></td>

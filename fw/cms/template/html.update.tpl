@@ -1,7 +1,7 @@
 <div class="table_list toolbar"></div>
 <div class="form">
-	<form action="" method="post" enctype="multipart/form-data" name="form1" id="fcontent">
-	
+	<form action="" method="post" enctype="multipart/form-data" name="fcontent" id="fcontent">
+		<input type="hidden" name="draft_id" value="{draft_id}" />
 		<!--BOX language_tab-->
 		<div class="language_tab {hide_no_html_record}">
 			<!--BASIC language-->
@@ -184,7 +184,9 @@
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="{hide_no_languages} {hide_no_html_record} table-Form1">
 				<tr>
 					<td class="textLabel"><label>&nbsp;</label></td>
-				  <td><input type="submit" class="btn" name="Submit" value="Save"></td>
+				  <td><input type="submit" class="btn" name="Submit" value="Save">
+				  <!--BOX btn_preview--><input type="submit" class="btn btn_preview"  name="btn_preview" value="{lang.btn_preview}"><!--BOX btn_preview-->
+				  </td>
 				</tr>
 		</table>
 	</form>
@@ -213,6 +215,7 @@
 		lang: '{language}'
 	};
 	if(access_edit == '') opt['disabled'] = '{lang.user_no_access}';
+	$('form#fcontent').preview();
 	$('form#fcontent').validate(opt);
 
 </script>

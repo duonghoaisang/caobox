@@ -26,3 +26,4 @@ var access_delete = '{access.delete}';
 <script type="text/javascript" src="js/validate.js"></script>
 <link rel="stylesheet" href="css/validate.css" type="text/css" media="screen" />
 <script type="text/javascript" src="../plugins/dateinput/dateinput.js"></script>
+<script type="text/javascript" src="js/preview.js"></script>

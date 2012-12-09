@@ -63,13 +63,14 @@ $cfg = $result->fetch();
 $data = array();
 $request['name'] = $cfg['name'];
 $request['content'] = $cfg['content'];
+
 if($cfg['data']) $data = unserialize($cfg['data']);
 $arrCfg = array();
 
 
 $fields = $oClass->fields($request['module']);
 foreach($fields as  $rs){
-	if($rs['Comment'] != 'system'){
+	if(substr($rs['Comment'],0,6) != 'system'){
 		$rs['code'] = $rs['Field'];
 		$rs['chose_checked'] = $data['main_fields'][$rs['code']]['chose']?'checked':'';
 		$rs['require_checked'] = $data['main_fields'][$rs['code']]['require']?'checked':'';
@@ -90,7 +91,7 @@ foreach($fields as  $rs){
 $ln_fields = $oClass->fields($request['module'].'_ln');
 
 foreach($ln_fields as  $rs){
-	if($rs['Comment'] != 'system'){
+	if(substr($rs['Comment'],0,6) != 'system'){
 		$rs['code'] = $rs['Field'];
 		$rs['chose_checked'] = $data['ln_fields'][$rs['code']]['chose']?'checked':'';
 		$rs['require_checked'] = $data['ln_fields'][$rs['code']]['require']?'checked':'';
@@ -108,7 +109,7 @@ if($request['module'] == 'content'){
 
 	$cat_fields = $oClass->fields('category');
 	foreach($cat_fields as  $rs){
-		if($rs['Comment'] != 'system'){
+		if(substr($rs['Comment'],0,6) != 'system'){
 			$rs['code'] = $rs['Field'];
 			$rs['chose_checked'] = $data['cat_fields'][$rs['code']]['chose']?'checked':'';
 			$rs['require_checked'] = $data['cat_fields'][$rs['code']]['require']?'checked':'';
@@ -124,7 +125,7 @@ if($request['module'] == 'content'){
 	
 	$ln_catfields = $oClass->fields('category_ln');
 	foreach($ln_catfields as  $rs){
-		if($rs['Comment'] != 'system'){
+		if(substr($rs['Comment'],0,6) != 'system'){
 			$rs['code'] = $rs['Field'];
 			$rs['chose_checked'] = $data['ln_catfields'][$rs['code']]['chose']?'checked':'';
 			$rs['require_checked'] = $data['ln_catfields'][$rs['code']]['require']?'checked':'';
@@ -161,6 +162,8 @@ if($request['module'] == 'content' || $request['module'] == 'html'){
 }
 
 //show fields
+$arrCfg['url_preview'] = $data['url_preview'];
+$arrCfg['cat_url_preview'] = $data['cat_url_preview'];
 $arrCfg['rows_per_page'] = $data['rows_per_page'];
 
 $arrCfg['tpl_view'] = $data['tpl_view']?stripslashes($data['tpl_view']):$request['module'].'.tpl';

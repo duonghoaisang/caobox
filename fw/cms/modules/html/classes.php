@@ -28,13 +28,22 @@ class ClassModel extends Model{
 	function update($id,$data){
 		return $this->db->update($this->prefix.'html',$data," id = ".intval($id));
 	}
+	function insert($id,$data){
+		$data['id'] = $id;
+		return $this->db->insert($this->prefix.'html',$data);
+	}
+	function lastid(){
+		return $this->db->query("SELECT MAX(id) as lastid FROM ".$this->prefix."html");
+	}
 	
 	function update_ln($id,$ln,$data){
 		$data['id'] = intval($id);
 		$data['ln'] = $ln;
 		return $this->db->replace($this->prefix.'html_ln',$data);
 	}
-
+	function get_draft($id = 0){
+		return $this->db->query("SELECT * FROM ".$this->prefix."html WHERE draft = ".intval($id));
+	}
 	
 	function delete($id){
 		$result = $this->db->query("SELECT * FROM ".$this->prefix."html WHERE id = ".intval($id));
@@ -49,7 +58,8 @@ class ClassModel extends Model{
 				'fields_extra'=>'',
 				'date'=>date('Y-m-d'),
 			);
-			$this->db->update($this->prefix."html",$data,"id=".intval($id));
+			//$this->db->update($this->prefix."html",$data,"id=".intval($id));
+			$this->db->delete($this->prefix."html","id=".intval($id));
 			$this->db->delete($this->prefix."html_ln","id = ".intval($id));
 		}
 	}

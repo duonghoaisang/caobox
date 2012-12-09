@@ -1,8 +1,9 @@
-<form action="" method="post" id="fcontent" enctype="multipart/form-data" name="form1">
+<form action="" method="post"  name="fcontent" id="fcontent" enctype="multipart/form-data" >
 <div class="top_callFunc">
 	<div class="hide breadcrumb_cat">{xpath}</div>	
 	<a href="{http_referer}" class="btn r">&lt; {lang.back}</a>
-	
+	<input type="hidden" name="draft_id" value="{draft_id}" />
+	<input type="hidden" name="draft" value="{draft}" />
 </div>
 
 
@@ -198,7 +199,8 @@
 					</select>
 				</span>
 			</div>
-			<input type="submit" class="btn" name="Submit" value="{lang.save}">
+			<input type="submit" class="btn" name="submit" value="{lang.save}" >
+			<!--BOX btn_preview--><input type="submit" class="btn btn_preview"  name="btn_preview" value="{lang.btn_preview}"><!--BOX btn_preview-->
 			<input type="button" class="btn btn_cancel" id="reset" onclick="location.href='{http_referer}';" value="{lang.cancel}">
 			
 		</td>
@@ -223,11 +225,15 @@
 		}
     });
 	<!--BOX drapdrop_gallery-->
+	
 	var opt = {
 		required: [{required_fields}],
 		required_lang: [{required_ln_fields}],
 		lang: '{language}'
+		
 	};
 	if({access_action} == '') opt['disabled'] = '{lang.user_no_access}';
+	
+	$('form#fcontent').preview();
 	$('form#fcontent').validate(opt);
 </script>
