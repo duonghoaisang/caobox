@@ -17,6 +17,7 @@ class bSession extends CaoBox{
 		
 	}
 	
+	
 	function load(){
 		if($this->enable){
 			ini_set('session.save_handler', 'user');
@@ -29,7 +30,7 @@ class bSession extends CaoBox{
 				array($this, 'gc')
 			);
 		}else{
-			$ini_session = ini_get('session.save_path');
+			$ini_session = session_save_path();
 			if(!is_writable($ini_session)) $this->getError('We cannot create session, please set  <strong>WRITE</strong> access for folder <strong>'.$ini_session.'</strong>');
 
 		}
