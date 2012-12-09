@@ -150,3 +150,17 @@ function resize_toggle_advance(o){
 	$(o).parent().find('table').toggle();
 	return false;
 }
+
+function sitePreview(form,value){
+	$('form#fcontent').attr('target',value);
+	$('#iframe_preview_site').load(function(){
+		var str = $(this).contents().find('body').html();
+		$('.cms_overlay').hide();
+		var obj = str.split(':');
+		var newid = obj[obj.length - 1];
+		obj.pop();
+		document.fcontent.draft_id.value = newid;
+		window.open(obj.join(':'),'window_preview')
+		
+	});
+}
