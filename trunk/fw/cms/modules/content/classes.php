@@ -24,6 +24,9 @@ class ClassModel extends Model{
 	function get($id = 0){
 		return $this->db->query("SELECT * FROM ".$this->prefix."content WHERE id = ".intval($id));
 	}
+	function get_draft($id = 0){
+		return $this->db->query("SELECT * FROM ".$this->prefix."content WHERE draft = ".intval($id));
+	}
 
 	function get_ln($id){
 		$result =  $this->db->query("SELECT ln.* FROM ".$this->prefix."content_ln ln,".$this->prefix."language l WHERE l.active = 1 AND ln.ln = l.ln AND ln.id = ".intval($id)." ORDER BY l.is_default DESC,l.order_id");

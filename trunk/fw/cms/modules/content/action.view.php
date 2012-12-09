@@ -128,6 +128,8 @@ if($_POST){
 		if($delcat) $rs['delcat'] = 'show';
 		$rs['status_fields'] = $total?implode('</td><td class="th-action status_fields">',$array_cat_status_fields):'';
 		$rs['row'] = $k%2?1:2;
+		$rs['draft'] = $rs['draft']?'draft': '';
+		$rs['draft_star'] = $rs['draft']?'**':'';
 		$tpl->assign($rs,'category');
 		$k++;
 	}
@@ -207,6 +209,8 @@ if($_POST){
 		$rs['row'] = $k%2?1:2;
 		$rs['classup'] =  $k + $start ==1?'hide':'';
 		$rs['classdown'] = ($k + $start) < $total?'':'hide';
+		$rs['draft'] = $rs['draft']?'draft': '';
+		$rs['draft_star'] = $rs['draft']?'**':'';
 		$tpl->assign($rs,'product');
 		$k++;
 	}

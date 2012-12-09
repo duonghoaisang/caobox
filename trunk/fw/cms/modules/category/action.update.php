@@ -92,13 +92,51 @@ if($_POST){
 		foreach($cfg_type['cat_fields'] as $code=>$info) if($info['chose'] && in_array($code,$fields)){
 			$arr[$code] = $_POST[$code];
 		}
-		
+		$arr['draft'] = 0;
 		$arr['icon'] = $_POST['icon'];
 		$arr['image'] = $_POST['image'];
 		$arr['date'] = $_POST['date'];	
 		$arr['file_extra'] = serialize($file_extra);
 		
-		if($request['do'] == 'new'){
+		if($request['do']=='new'){
+			$do = 'new';
+		}else{
+			$do = 'update';
+		}
+		if($_POST['btn_preview']){ // click preview
+			
+			if($_POST['draft_id']){
+				$do = 'update';
+				$request['id'] = $_POST['draft_id'];
+			}else{
+				$do = 'new';
+				
+			}
+			if($request['id']){
+				$arr['draft'] = $request['id'];
+			}else{
+				$arr['draft'] = -1;
+			}
+			
+			
+		}else{ // click save
+			if($_POST['draft_id'] > 0){
+				if($request['id']){
+					$do = 'update';
+				}else{
+					$do = 'new';
+				}
+				if(!$_POST['draft']) $oClass->delete($_POST['draft_id']);
+			}else{
+				if($request['id']){
+					$do = 'update';
+				}else{
+					$do = 'new';
+				}
+			}
+		}
+		
+		if($do == 'new'){
 			$arr['parentid'] = $request['parentid'];
 			$arr['type'] = $request['type'];
 			$lastid = $oClass->insert($arr);
@@ -201,6 +239,11 @@ if($_POST){
 	
 	if(!$error){
 		clear_sql_cache();
+		
+		if($_POST['btn_preview']){
+			$result_data = array('url_preview'=>$cfg_type['url_preview']);
+			die(''.addslashes(str_replace(array('$parentid','$catid'),array($arr['parentid'],$lastid),$cfg_type['cat_url_preview'])).':'.$lastid.'');
+		}
 		$query_string = $_SERVER['QUERY_STRING'];
 		parse_str($query_string,$result);
 		$mod = $result['p'];
@@ -219,6 +262,7 @@ if($request['do']=='new'){
 	$breadcrumb->assign("","New");
 	$request['access_action'] = 'access_new';
 	$request['date'] = date('Y-m-d');
+	$request['draft_id'] = 0;
 	$file_extra = array();
 	$cat_ln = array();
 }else{
@@ -230,6 +274,14 @@ if($request['do']=='new'){
 	$file_extra = $cat['file_extra']?unserialize($cat['file_extra']):array();
 	$breadcrumb->assign("","Edit");
 	$request['access_action'] = 'access_edit';
+	$draft_result = $oClass->get_draft($cat['id']);
+	$draft  = $draft_result->fetch();
+	if($draft){
+		//current is draft
+		$request['draft_id'] = $draft['id'];
+	}else{
+		$request['draft_id'] = $cat['draft']?$cat['id']:0;
+	}
 }
 
 $required_fields = array();
@@ -373,5 +425,5 @@ if($cfg_type['catfile_extra']['name']){
 		
 	}
 }
-
+if($cfg_type['cat_url_preview']) $tpl->box('btn_preview');
 ?>

@@ -63,7 +63,7 @@
 						<a href="./?mod={module}&amp;parentid={category.id}&type={type}" title="{lang.category_detail}"><img src="images/icons_default/folder.gif" width="16" height="16" border="0" align="absmiddle" /></a>					</td>
 					<td class="th-name">
 						<span class="hide  {action_viewcat}"></span>
-						<a href="./?mod={module}&amp;parentid={category.id}&type={type}" title="View list detail">{category.list_field}</a>					</td>
+						<a href="./?mod={module}&amp;parentid={category.id}&type={type}" class="{category.draft} " title="View list detail">{category.draft_star} {category.list_field}</a>					</td>
 					<td class="th-date">{category.date}</td>
 					<td class="th-action {class_status_fields}">{category.status_fields}</td>
 					<td class="th-order">{category.order_id}</td>
@@ -83,7 +83,7 @@
 					<td class="th-checkbox firstColumn"><input type="checkbox" name="pro[]" value="{product.id}" class="no_width" /></td>
 					<td class="th-name">
 						<a class="hide {subcontent_show}" title="{subcontent_name}" href="?mod=contentsub&amp;p={module}&amp;pid={product.id}&amp;parentid={parentid}&amp;type={type}"><img src="images/icons_default/file.gif" align="File" /></a> {product.thumb_field}
-						<a href="?mod={module}&amp;act=update&amp;id={product.id}&amp;parentid={parentid}&amp;type={type}" title="" class="action-edit">{product.list_field}</a>
+						<a href="?mod={module}&amp;act=update&amp;id={product.id}&amp;parentid={parentid}&amp;type={type}" title="" class="action-edit {product.draft}">{product.draft_star} {product.list_field}</a>
 						
 				  </td>
 					<td class="th-date">{product.date}</td>

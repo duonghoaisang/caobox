@@ -24,6 +24,9 @@ class ClassModel extends Model{
 		}
 		return $data;
 	}
+	function get_draft($id = 0){
+		return $this->db->query("SELECT * FROM ".$this->prefix."category WHERE draft = ".intval($id));
+	}
 	
 	function update_ln($id,$ln,$data){
 		$data['id'] = intval($id);

@@ -96,10 +96,48 @@ if($_POST){
 		/// No modify
 		$arr['icon'] = $_POST['icon'];
 		$arr['image'] = $_POST['image'];
+		$arr['draft'] = 0;
 		$arr['date'] = $_POST['date'];
 		$arr['file_extra'] = serialize($file_extra);
 		$arr['fields_extra'] = serialize($_POST['fields_extra']);
 		if($request['do']=='new'){
+			$do = 'new';
+		}else{
+			$do = 'update';
+		}
+		if($_POST['btn_preview']){ // click preview
+			
+			if($_POST['draft_id']){
+				$do = 'update';
+				$request['id'] = $_POST['draft_id'];
+			}else{
+				$do = 'new';
+				
+			}
+			if($request['id']){
+				$arr['draft'] = $request['id'];
+			}else{
+				$arr['draft'] = -1;
+			}
+			
+			
+		}else{ // click save
+			if($_POST['draft_id'] > 0){
+				if($request['id']){
+					$do = 'update';
+				}else{
+					$do = 'new';
+				}
+				if(!$_POST['draft']) $oClass->delete($_POST['draft_id']);
+			}else{
+				if($request['id']){
+					$do = 'update';
+				}else{
+					$do = 'new';
+				}
+			}
+		}
+		if($do=='new'){
 			$arr['catid'] = $request['parentid'];
 			$arr['type'] = $request['type'];
 			$arr['userid'] = intval($_SESSION['admin_login']['id']);
@@ -246,12 +284,18 @@ if($_POST){
 			$query_string = $_SERVER['QUERY_STRING'];
 			parse_str($query_string,$result);
 		
+			
+			if($warning) $result['msg'] = $warning;
+			if($_POST['btn_preview']){
+				die(''.addslashes(str_replace(array('$catid','$id'),array($arr['catid'],$lastid),$cfg_type['url_preview'])).':'.$lastid.'');
+			}
+			
 			if($_POST['back']){
 				unset($result['act'],$result['id'],$result['do']);
 			}else{
 				$_SESSION['updated'] = true;
 			}
-			if($warning) $result['msg'] = $warning;
+			unset($result['preview']);
 			$hook->redirect('?'.http_build_query($result,NULL,'&'));
 		}
 
@@ -275,6 +319,7 @@ if($request['do']=='new'){
 	$breadcrumb->assign("","New");
 	$request['access_action'] = 'access_new';
 	$request['date'] = date('Y-m-d');
+	$request['draft_id'] = 0;
 	$file_extra = array();
 	foreach($cfg_type['main_fields'] as $code=>$info) if($info['chose'] && $info['type'] == 'status'){
 		$content[$code] = $info['status_default'];
@@ -287,6 +332,15 @@ if($request['do']=='new'){
 	$fields_extra = $content['fields_extra']?unserialize($content['fields_extra']):array();
 	$tpl->assign($hook->format($content));
 	$breadcrumb->assign("","Edit",$request['bread']);
+	$draft_result = $oClass->get_draft($request['id']);
+	$draft  = $draft_result->fetch();
+	if($draft){
+		//current is draft
+		$request['draft_id'] = $draft['id'];
+	}else{
+		$request['draft_id'] = $content['draft']?$content['id']:0;
+	}
+	
 	$request['display_update'] = 'show';
 	$request['access_action'] = 'access_edit';
 	//if(!$request['date']) $request['date'] = date('Y-m-d');
@@ -482,6 +536,7 @@ if($cfg_type['fields_extra']['name']){
 	}
 }
 
+if($cfg_type['url_preview']) $tpl->box('btn_preview');
 if($request['parentid']) $tpl->box('breadcrumb_cat');
 $tpl->assign($request);
 

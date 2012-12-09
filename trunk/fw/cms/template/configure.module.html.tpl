@@ -12,6 +12,13 @@
         <td>Description</td>
         <td><textarea name="content" rows="3" class="no_width">{content}</textarea></td>
       </tr>
+      <tr>
+        <td>URL Preview</td>
+        <td><input name="url_preview" class="no_width" type="text" id="name" value="{url_preview}" />
+        <br />Example:
+        <br /> product/$id
+        </td>
+      </tr>
   <tr>
     <td>&nbsp;</td>
     <td><input name="act[]2" type="checkbox" class="no_width" id="act[]2" value="seo" {seo_checked} />
