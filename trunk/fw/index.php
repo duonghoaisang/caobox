@@ -1,5 +1,10 @@
 <?php
-//error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+/**
+* @Name: CaoBox v1.0
+* @author LinhNMT <w2ajax@gmail.com>
+* @link http://code.google.com/p/caobox/
+* @copyright Copyright &copy; 2009 phpbasic
+*/
 define('_ROOT',rtrim(dirname(__FILE__),'/').'/',true);
 define('_APP',_ROOT,true);
 define('_CORE',_ROOT,true);
