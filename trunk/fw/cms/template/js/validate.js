@@ -1,7 +1,7 @@
 // JavaScript Document
 
 (function($){
-	$.fn.validate = function(opt){
+	$.fn.validate = function(opt, force_call){
 		$(this).find('input,textarea')[0].focus();
 		//$(firstfocus).find(':first').focus();
 		var cfg = {
@@ -9,16 +9,19 @@
 			disabled: false,
 			lang: 'vn'
 		}
-		if(opt)$.extend(cfg,opt);
+		if(opt) $.extend(cfg,opt);
+		
 		var required = {};
 		for(var i in cfg.required_lang) required[cfg.required_lang[i]+'['+cfg.lang+']'] = true;
 		for(var i in cfg.required) required[cfg.required[i]] = true;
 		var obj  = this; 
-		$(this).submit(function(){
+		var fn = function(){
 			if(cfg.disabled){
 				alert(cfg.disabled);
 				return false;
 			}
+			
+			
 			var r = true;
 			$(obj).find('input,textarea,select').each(function(){
 				if(required[this.name]===true && this.value == ''){
@@ -35,7 +38,17 @@
 			}
 			
 			return r;
-		});
+		}
+		$(this).submit(fn);
+		$(this).find('input[type="submit"]').click(function(){
+			if($(this).attr('name') == 'btn_preview'){
+				$(obj).attr('target','iframe_preview_site');
+			}else{
+				$(obj).attr('target','_self');
+			}
+		})
+		
+		
 	}  
 })(jQuery)
 
