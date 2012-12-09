@@ -22,19 +22,19 @@ class CategoryDAO extends Model{
 		$sql_order = $orderby?" ORDER BY $orderby":"";
 		if($type>=0) $cond .=" AND c.type = ".intval($type);
 		if($parentid>=0) $cond .= " AND c.parentid = ".intval($parentid);
-		return $this->query("SELECT * FROM ".$this->prefix."category c,".$this->prefix."category_ln ln WHERE c.active = 1 AND c.id = ln.id AND ln.ln = '".$this->setLang('content',$type,$this->configure_mod)."' AND $cond $sql_order");
+		return $this->query("SELECT * FROM ".$this->prefix."category c,".$this->prefix."category_ln ln WHERE c.draft = 0 AND c.active = 1 AND c.id = ln.id AND ln.ln = '".$this->setLang('content',$type,$this->configure_mod)."' AND $cond $sql_order");
 	}
 	
 	function get($id){
 		$info = $this->info($id);
-		$result = $this->db->query("SELECT * FROM ".$this->prefix."category c,".$this->prefix."category_ln ln WHERE c.id = ln.id AND ln.ln = '".$this->setLang('content',$info['type'],$this->configure_mod)."' AND c.id = ".intval($id));
+		$result = $this->db->query("SELECT * FROM ".$this->prefix."category c,".$this->prefix."category_ln ln WHERE c.draft = 0 AND c.id = ln.id AND ln.ln = '".$this->setLang('content',$info['type'],$this->configure_mod)."' AND c.id = ".intval($id));
 		$data = $result->fetch();
 		$result->cache();
 		return $data;
 	}
 	
 	function info($id){
-		$result = $this->db->query("SELECT * FROM ".$this->prefix."category c WHERE c.id = ".intval($id));
+		$result = $this->db->query("SELECT * FROM ".$this->prefix."category c WHERE c.id = ".intval($id)." AND c.draft = 0");
 		return $result->fetch();
 	}
 	
