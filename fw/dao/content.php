@@ -29,19 +29,19 @@ class ContentDao extends Model{
 		$cond_type = 1;
 		if(is_array($type)) $cond_type = " c.type IN (".implode(',',$type).")"; 
 		elseif($type>=0) $cond_type = " c.type = ".intval($type);
-		return $this->query("SELECT c.*,ln.* FROM ".$this->prefix."content c,".$this->prefix."content_ln ln WHERE c.active = 1 AND $cond_type AND c.id = ln.id AND ln.ln = '".$this->setLang('content',$type,$this->configure_mod)."' AND $cond $sql_order".($limit?" LIMIT $start,$limit":""));
+		return $this->query("SELECT c.*,ln.* FROM ".$this->prefix."content c,".$this->prefix."content_ln ln WHERE c.draft = 0 AND c.active = 1 AND $cond_type AND c.id = ln.id AND ln.ln = '".$this->setLang('content',$type,$this->configure_mod)."' AND $cond $sql_order".($limit?" LIMIT $start,$limit":""));
 	}	
 
 	function get($id  = 0){
 		$info = $this->info($id);
-		$result =  $this->db->query("SELECT c.*,ln.* FROM ".$this->prefix."content c,".$this->prefix."content_ln ln WHERE c.active = 1  AND c.id = ln.id AND ln.ln = '".$this->setLang('content',$info['type'],$this->configure_mod)."' AND c.id = ".intval($id));
+		$result =  $this->db->query("SELECT c.*,ln.* FROM ".$this->prefix."content c,".$this->prefix."content_ln ln WHERE c.draft = 0 AND c.active = 1  AND c.id = ln.id AND ln.ln = '".$this->setLang('content',$info['type'],$this->configure_mod)."' AND c.id = ".intval($id));
 		$data =  $result->fetch();
 		$result->cache();
 		return $data;
 	}	
 	
 	function info($id  = 0){
-		$result =  $this->db->query("SELECT c.* FROM ".$this->prefix."content c WHERE c.id = ".intval($id));
+		$result =  $this->db->query("SELECT c.* FROM ".$this->prefix."content c WHERE c.draft = 0 AND c.id = ".intval($id));
 		return $result->fetch();
 	}	
 	
