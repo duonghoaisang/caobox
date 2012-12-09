@@ -27,7 +27,7 @@ class Controller extends CaoBox{
 	//
 	function Controller($rewrite = false,$htaccess = false){
 		/////
-		
+		//echo $ini_session = session_save_path();
 		parent::error_handle($GLOBALS['cfg']['error_report'],$GLOBALS['cfg']['error_display'],$GLOBALS['cfg']['error_log'],$GLOBALS['cfg']['error_log_path']);
 		
 		$this->uri = rtrim($_SERVER[$GLOBALS['cfg']['server_var']],'\\/').'/';
