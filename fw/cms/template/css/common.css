@@ -65,3 +65,6 @@ span.description{
 	background: #eee;
 	border: 1px solid #333;
 }
+.datepicker,.datetimepicker{
+	width:160px;
+}

@@ -49,9 +49,15 @@ Web SEO </td>
         <td bgcolor="#CCCCCC">Main content </td>
         <td bgcolor="#CCCCCC">&nbsp;</td>
       </tr>
-        <tr>
+      <tr>
         <td>Enable input date </td>
-        <td><input name="act[]" type="checkbox" class="no_width" id="act[]" value="enable_date" {enable_date_checked} /></td>
+        <td>
+        <input name="act[]" type="checkbox" class="no_width" id="act[]" value="enable_date" {enable_date_checked} />
+        <select name="enable_date_type">
+          <option value="date">Date (yyyy-mm-dd)</option>
+		  <option value="datetime" {selected_enable_date_type_datetime}>Date Time(yyyy-mm-dd h:i:s)</option>
+        </select> 
+        </td>
       </tr>
 
    <tr>

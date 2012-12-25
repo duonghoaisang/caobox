@@ -183,7 +183,13 @@ Meta data
       </tr>
       <tr>
         <td>Enable input date </td>
-        <td><input name="act[]" type="checkbox" class="no_width" id="act[]" value="enable_date" {enable_date_checked} /></td>
+        <td>
+        <input name="act[]" type="checkbox" class="no_width" id="act[]" value="enable_date" {enable_date_checked} />
+        <select name="enable_date_type">
+          <option value="date">Date (yyyy-mm-dd)</option>
+		  <option value="datetime" {selected_enable_date_type_datetime}>Date Time(yyyy-mm-dd h:i:s)</option>
+        </select> 
+        </td>
       </tr>
 	  
 	  <tr>
@@ -787,7 +793,12 @@ Max </td>
   </tr>
         <tr>
         <td>Enable input date </td>
-        <td><input name="act[]" type="checkbox" class="no_width" id="act[]" value="enable_catdate" {enable_catdate_checked} /></td>
+        <td><input name="act[]" type="checkbox" class="no_width" id="act[]" value="enable_catdate" {enable_catdate_checked} />
+        <select name="enable_catdate_type">
+          <option value="date">Date (yyyy-mm-dd)</option>
+		  <option value="datetime" {selected_enable_catdate_type_datetime}>Date Time(yyyy-mm-dd h:i:s)</option>
+        </select> 
+        </td>
       </tr>
 
 <tr>
