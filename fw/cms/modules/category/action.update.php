@@ -269,6 +269,7 @@ if($request['do']=='new'){
 	$cat_ln = $oClass->get_ln($_GET['id']);
 	$result = $oClass->get($_GET['id']);
 	$cat = $result->fetch();
+	$cat['date'] = $cfg_type['enable_catdate_type']=='date'?substr($cat['date'],0,10):$cat['date'];
 	$tpl->assign($hook->format($cat));
 	$request['display_update'] = ' show';
 	$file_extra = $cat['file_extra']?unserialize($cat['file_extra']):array();
@@ -362,6 +363,7 @@ $request['size_ln_image'] = demension_size($cfg_type['ln_catimg_img']['w'],$cfg_
 $request['required_ln_catfields'] = count($required_ln_catfields)?"'".implode("','",$required_ln_catfields)."'":'';
 $request['required_catfields'] = count($required_catfields)?"'".implode("','",$required_catfields)."'":'';
 $request['msg'] = $error;
+$request['enable_catdate_type'] = $cfg_type['enable_catdate_type']?$cfg_type['enable_catdate_type']:'date';
 
 
 $show = array();

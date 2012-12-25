@@ -275,7 +275,7 @@ if($request['do']=='new'){
 	$result = $oClass->get($request['id']);
 	$content = $result->fetch();
 	$file_extra = $content['file_extra']?unserialize($content['file_extra']):array();
-
+	$content['date'] = $cfg_type['enable_date_type']=='date'?substr($content['date'],0,10):$content['date'];
 	$tpl->assign($hook->format($content));
 	$breadcrumb->assign("","Edit",$request['bread']);
 	$request['display_update'] = 'show';
@@ -359,6 +359,7 @@ $request['size_gallery'] = demension_size($cfg_type['gallery_img']['w'],$cfg_typ
 $request['required_fields'] = count($required_fields)?"'".implode("','",$required_fields)."'":'';
 $request['required_ln_fields'] = count($required_ln_fields)?"'".implode("','",$required_ln_fields)."'":'';
 $request['msg'] = $error;
+$request['enable_date_type'] = $cfg_type['enable_date_type']?$cfg_type['enable_date_type']:'date';
 $tpl->assign($request);
 $show = array();
 if($show_fields) foreach($show_fields as $field){

@@ -330,6 +330,7 @@ if($request['do']=='new'){
 	$content = $result->fetch();
 	$file_extra = $content['file_extra']?unserialize($content['file_extra']):array();
 	$fields_extra = $content['fields_extra']?unserialize($content['fields_extra']):array();
+	$content['date'] = $cfg_type['enable_date_type']=='date'?substr($content['date'],0,10):$content['date'];
 	$tpl->assign($hook->format($content));
 	$breadcrumb->assign("","Edit",$request['bread']);
 	$draft_result = $oClass->get_draft($request['id']);
@@ -352,7 +353,7 @@ foreach($cfg_type['main_fields'] as $code=>$info){
 	if($info['chose'] && $info['type'] != 'status' && in_array($code,$fields)){
 		$tmp = '<tr>
   <td class="textLabel"><label for="input_'.$code.'">'.$info['name'].' '.$arr['ln_alias'].'</label></td>
-  <td>'.html_input($info['type'],$code,$content[$code],' id="input_'.$code.'" class="w100pc" title="'.$info['require_msg'].'"').'
+  <td>'.html_input($info['type'],$code,$content[$code],' id="input_'.$code.'"  title="'.$info['require_msg'].'"').'
 	<span class="description">'.$info['description'].'</span>
   </td>
 </tr>';
@@ -412,7 +413,7 @@ while($rs = $lang->fetch()){
 			$code = $cfg_type['ln_fields_extra']['code'][$k]?$cfg_type['ln_fields_extra']['code'][$k]:$k;
 			$str .= '<tr>
 				<td class="textLabel">'.$name.' '.$arr['ln_alias'].'</td>
-				<td>'.html_input($cfg_type['ln_fields_extra']['type'][$k],'ln_fields_extra['.$arr['ln'].']['.$code.']',$ln_fields_extra[$code],'  class="w100pc" ').'</td>
+				<td>'.html_input($cfg_type['ln_fields_extra']['type'][$k],'ln_fields_extra['.$arr['ln'].']['.$code.']',$ln_fields_extra[$code],'   ').'</td>
 			</tr>';
 			
 		}
@@ -442,6 +443,7 @@ $request['size_gallery'] = demension_size($cfg_type['gallery_img']['w'],$cfg_typ
 $request['field_gallery_name'] = $cfg_type['gallery_name']?$cfg_type['gallery_name']:'Gallery';
 $request['required_fields'] = count($required_fields)?"'".implode("','",$required_fields)."'":'';
 $request['required_ln_fields'] = count($required_ln_fields)?"'".implode("','",$required_ln_fields)."'":'';
+$request['enable_date_type'] = $cfg_type['enable_date_type']?$cfg_type['enable_date_type']:'date';
 if(in_array('drapdrop_gallery',$show_actions))  $tpl->box('drapdrop_gallery');
 if(in_array('enable_editor',$cfg_type['act'])) $tpl->box('enable_editor');
 
