@@ -79,6 +79,7 @@ class ClassModel extends Model{
 		}
 		if($date){
 			$type['date']	= 'Input date';
+			$type['datetime'] = 'Input Datetime';
 		}
 		$str = '<select name="'.$name.'" '.($params?$params:'').'>';
 		foreach($type as $key=>$val) $str .= '<option value="'.$key.'" '.($key==$c?'selected':'').'>'.$val.'</option>';

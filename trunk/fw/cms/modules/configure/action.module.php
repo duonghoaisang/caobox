@@ -330,6 +330,8 @@ $arrCfg['ln_catimg_thumb_orginal_'.($data['ln_catimg_thumb']['orginal']?'1':'0')
 
 
 $arrCfg['selected_languages_'.$data['languages']] = 'selected';
+$arrCfg['selected_enable_date_type_'.$data['enable_date_type']] = 'selected';
+$arrCfg['selected_enable_catdate_type_'.$data['enable_catdate_type']] = 'selected';
 $arrCfg['selected_cat_languages_'.$data['cat_languages']] = 'selected';
 
 $tpl->assign($arrCfg);

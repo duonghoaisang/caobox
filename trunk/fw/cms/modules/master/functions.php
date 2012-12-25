@@ -63,7 +63,9 @@ function html_input($inputtype = 'input', $name = 'textfield',$value = '',$param
 		case 'tinymce':
 			return '<textarea class="tinymce" name="'.$name.'" '.$params.'>'.$value.'</textarea>';
 		case 'date':
-			return '<script type="text/javascript">DateInput(\''.$name.'\', true, \'YYYY-MM-DD\',\''.($value?$value:date('Y-m-d')).'\');</script>';
+			return '<input type="text" class="datepicker" name="'.$name.'" value="'.substr($value,0,10).'"  '.$params.' />';
+		case 'datetime':
+			return '<input type="text" class="datetimepicker" name="'.$name.'" value="'.$value.'"  '.$params.' />';
 		default: 
 			return '<input type="text" name="'.$name.'" value="'.$value.'"  '.$params.' />';
 	}

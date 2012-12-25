@@ -370,7 +370,7 @@ foreach($cfg_type['main_fields'] as $code=>$info){
 	if($info['chose'] && $info['type'] != 'status' && in_array($code,$fields)){
 		$tmp = '<tr>
   <td class="textLabel">'.$info['name'].' '.$arr['ln_alias'].($info['require']?'<span class="red">*</span>':'').'</td>
-  <td>'.html_input($info['type'],$code,$data[$code],' class="w100pc" title="'.$info['require_msg'].'"').'
+  <td>'.html_input($info['type'],$code,$data[$code],' title="'.$info['require_msg'].'"').'
 	<span class="description">'.$info['description'].'</span>
   </td>
 </tr>';
@@ -391,7 +391,9 @@ $fields_extra = $data['fields_extra']?unserialize($data['fields_extra']):array()
 
 $data  = $hook->format($data);
 //$data['date'] = date('Y-m-d',strtotime($data['timestamp']));
+$data['date'] = $cfg_type['enable_date_type']=='date'?substr($data['date'],0,10):$data['date'];
 $tpl->assign($data);
+
 $request['display_update'] = 'style="display: block;"';
 
 $result = $oGallery->get($system->module,$request['id']);
@@ -416,7 +418,7 @@ $request['required_ln_fields'] = count($required_ln_fields)?"'".implode("','",$r
 $request['field_gallery_name'] = $cfg_type['gallery_name']?$cfg_type['gallery_name']:'Gallery';
 if(in_array('drapdrop_gallery',$show_actions))  $tpl->box('drapdrop_gallery');
 if(in_array('enable_editor',$cfg_type['act'])) $tpl->box('enable_editor');
-
+$request['enable_date_type'] = $cfg_type['enable_date_type']?$cfg_type['enable_date_type']:'date';
 
 $show = array();
 if($show_fields) foreach($show_fields as $field){
@@ -490,6 +492,7 @@ if($cfg_type['file_extra']['name']){
 // fields extra
 if($cfg_type['fields_extra']['name']){
 	foreach($cfg_type['fields_extra']['name'] as $k=>$name) if($name){
+		//echo $cfg_type['fields_extra']['type'][$k].'-';
 		$rs = array();
 		$rs['stt'] = $k;
 		$rs['name'] = $name;
@@ -498,6 +501,7 @@ if($cfg_type['fields_extra']['name']){
 		
 	}
 }
+
 if($cfg_type['url_preview']) $tpl->box('btn_preview');
 
 ?>
