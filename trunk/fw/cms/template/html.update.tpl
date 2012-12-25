@@ -70,7 +70,9 @@
 		  {main_fields}
 			<tr class="hide {display_enable_date}" >
 				<td class="textLabel"><label>{lang.date}</label></td>
-				<td class="input_date"><script type="text/javascript">DateInput('date', true, 'YYYY-MM-DD','{date}');</script></td>
+				<td class="input_date">
+				<input type="text" name="date" value="{date}" maxlength="10" class="{enable_date_type}picker" />
+				</td>
 			</tr>
 			<tr class="hide {display_icon}" >
 				<td class="textLabel"><label>{field_icon}</label></td>

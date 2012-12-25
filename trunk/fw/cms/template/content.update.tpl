@@ -127,7 +127,9 @@
 	</tr><!--BASIC status_fields-->
     <tr class="hide {display_enable_date}">
       <td class="textLabel">{lang.date}</td>
-      <td class="input_date"><script type="text/javascript">DateInput('date', true, 'YYYY-MM-DD','{date}');</script>&nbsp;</td>
+      <td class="input_date">
+      <input type="text" name="date" value="{date}" class="{enable_date_type}picker" />
+      </td>
     </tr>
     <tr class="hide {display_gallery}">
       <td class="textLabel">{field_gallery_name} <br /> 

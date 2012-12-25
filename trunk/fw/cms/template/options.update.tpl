@@ -46,7 +46,9 @@
 	{main_fields}
     <tr class="hide {display_enable_date}">
       <td>{lang.date}</td>
-      <td class="input_date"><script type="text/javascript">DateInput('date', true, 'YYYY-MM-DD','{date}');</script></td>
+      <td class="input_date">
+      <input type="text" name="date" value="{date}" class="{enable_date_type}picker" />
+      </td>
     </tr>
 	<!--BASIC file_extra-->
 	<tr>

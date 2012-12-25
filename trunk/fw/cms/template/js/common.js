@@ -12,6 +12,20 @@ $(document).ready(function(){
 		//var jshref = this.href.search('javascript');
 		if(this.href.search('javascript')) this.href += idx>-1?'&token='+token:'?token='+token;
 	});
+	var datepicker_obj = {
+			showOn:"button",
+			buttonImage:plugins_dir+'plugins/dateinput/date.png',
+			buttonImageOnly:true,
+			stepMinutes:1,
+			stepHours:1,
+			showSecond:true,
+			showTimepicker:true,
+			showButtonPanel:true,
+			dateFormat:"yy-mm-dd",
+			timeFormat:"hh:mm:ss"	
+		}
+	$('.datepicker').datepicker(datepicker_obj);
+	$('.datetimepicker').datetimepicker(datepicker_obj);
 })
 
 
@@ -164,3 +178,4 @@ function sitePreview(form,value){
 		
 	});
 }
+

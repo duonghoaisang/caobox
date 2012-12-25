@@ -104,7 +104,9 @@
 	</tr><!--BASIC file_extra-->
     <tr class="hide {display_enable_catdate}">
       <td>{lang.date}</td>
-      <td><script type="text/javascript">DateInput('date', true, 'YYYY-MM-DD','{date}');</script></td>
+      <td>
+      <input type="text" name="date" value="{date}" class="{enable_catdate_type}picker" />
+      </td>
     </tr>
   </table>
   <div class="table_list {hide_no_languages}" align="right">
