@@ -32,6 +32,7 @@
 			<input type="submit" class="btn btn-main1" name="Submit" value="{lang.login}" />
 			<span class="msg-error">{error}</span>
 		</p>
+		<p class="login-forgot"><a href="./?mod=user&act=forgot">Forgot password</a></p>
 	</form>	
 </div>
 
