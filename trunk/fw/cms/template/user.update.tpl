@@ -24,6 +24,28 @@
         <!--BASIC icon-->
       </select></td>
     </tr>
+    <tr>
+	  <td class="textLabel">Your IP</td>
+	  <td>{my_ip}</td>
+    </tr>
+    <tr>
+	  <td class="textLabel">
+	   Only allow IPs <a href="#" title="User can login only from these IPs, leave blank to accept from any IP">?</a>
+	  </td>
+	  <td>
+	  <textarea  name="ip_allow">{ip_allow}</textarea>
+	  <br />Ex: 118.1.3.10,210.2.7.23,...
+	  </td>
+    </tr>
+    <tr>
+	  <td class="textLabel">
+	   Deny IPs <a href="#" title="User cannot login  from these IPs, leave blank to accept from any IP">?</a>
+	  </td>
+	  <td>
+	  <textarea  name="ip_deny">{ip_deny}</textarea>
+	  <br />Ex: 118.1.3.10,210.2.7.23,...
+	  </td>
+    </tr>
 	<tr>
       <td class="textLabel">&nbsp;</td>
       <td align="right"><br />

@@ -45,7 +45,7 @@ if($_GET['menu']){
 $menu = explode('.',$_SESSION['cms_menu']);
 
 //unset($_SESSION);
-if($GLOBALS['controller']->module=='user' && $GLOBALS['controller']->action=='login'){
+if($GLOBALS['controller']->module=='user' && ($GLOBALS['controller']->action=='login' || $GLOBALS['controller']->action=='forgot')){
 	if(isset($_SESSION['admin_login'])) $hook->redirect('./?token='.$token);
 }else{
 	if(!isset($_SESSION['admin_login'])) $hook->redirect('./?mod=user&act=login&token='.$token);
@@ -64,7 +64,7 @@ $tpl->cache = _CACHE.'cms_';
 $image_exts = array('.jpg','.jpeg','.gif','.png');
 $login_user = $_SESSION['admin_login'];
 $login_user['setting'] = $login_user['data']?unserialize($login_user['data']):array();
-$skin_dir = is_dir($tpl->tpl_dir.'skins/'.$login_user['setting']['skin'])?$tpl->tpl_dir.'skins/'.$login_user['setting']['skin']:$tpl->tpl_dir.'skins/default';
+$skin_dir = isset($login_user['setting']['skin']) && is_dir($tpl->tpl_dir.'skins/'.$login_user['setting']['skin'])?$tpl->tpl_dir.'skins/'.$login_user['setting']['skin']:$tpl->tpl_dir.'skins/default';
 
 
 //Load main template

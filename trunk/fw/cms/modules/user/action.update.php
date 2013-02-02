@@ -19,6 +19,8 @@ if($_POST){
 	$data = array();
 	$data['skin'] = $_POST['skin'];
 	$data['icon'] = $_POST['icon'];
+	$data['ip_allow'] = $_POST['ip_allow'];
+	$data['ip_deny'] = $_POST['ip_deny'];
 	
 	$arr = array(
 		'fullname'=>$_POST['fullname'],
@@ -54,7 +56,7 @@ if($_POST){
 }
 
 
-
+$request['my_ip'] = $_SERVER['REMOTE_ADDR'];
 
 if($do=='new'){
 	$tpl->setfile(array(
@@ -74,6 +76,8 @@ if($do=='new'){
 	$cat = $oClass->get($userid);
 	$u = $cat->fetch();
 	$u['setting'] = $u['data']?unserialize($u['data']):array();
+	$u['ip_allow'] = $u['setting']['ip_allow'];
+	$u['ip_deny'] = $u['setting']['ip_deny'];
 	$tpl->assign($u);
 	$breadcrumb->assign("","Edit",$request['bread']);
 	if($userid == $_SESSION['admin_login']['id']){
