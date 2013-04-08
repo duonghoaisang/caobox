@@ -85,6 +85,8 @@ if($do=='new'){
 		$breadcrumb->assign('','CMS');
 		$breadcrumb->assign('','Profile');
 	}
+	//print_r($_SESSION["admin_login"]);
+	if(isset($request['id']) && $request['id'] && $request['id'] != $_SESSION['admin_login']['id']) $tpl->box('block_ip');
 }
 $dir = dir($tpl->tpl_dir."skins/");
 while ($rs = $dir->read()) {

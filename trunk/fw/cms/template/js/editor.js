@@ -1,4 +1,21 @@
 	tinyMCE.init({
+        theme : "simple",
+        mode : "specific_textareas",
+        editor_selector : "bbcodemce",
+        plugins : "bbcode",
+        theme_advanced_buttons1 : "bold,italic",
+        theme_advanced_buttons2 : "",
+        theme_advanced_buttons3 : "",
+        theme_advanced_toolbar_location : "bottom",
+        theme_advanced_toolbar_align : "center",
+        theme_advanced_styles : "Code=codeStyle;Quote=quoteStyle",
+        //content_css : "bbcode.css",
+        //entity_encoding : "raw",
+        add_unload_trigger : false,
+        remove_linebreaks : false
+	});
+	
+	tinyMCE.init({
 		// General options
 		mode : "specific_textareas",
 		editor_selector : "simplemce",

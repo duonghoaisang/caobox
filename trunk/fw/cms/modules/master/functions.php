@@ -62,6 +62,10 @@ function html_input($inputtype = 'input', $name = 'textfield',$value = '',$param
 			return '<textarea name="'.$name.'" '.$params.'>'.$value.'</textarea>';
 		case 'tinymce':
 			return '<textarea class="tinymce" name="'.$name.'" '.$params.'>'.$value.'</textarea>';
+		case 'simplemce':
+			return '<textarea class="simplemce" name="'.$name.'" '.$params.'>'.$value.'</textarea>';
+		case 'bbcodemce':
+			return '<textarea class="bbcodemce" name="'.$name.'" '.$params.'>'.$value.'</textarea>';
 		case 'date':
 			return '<input type="text" class="datepicker" name="'.$name.'" value="'.substr($value,0,10).'"  '.$params.' />';
 		case 'datetime':

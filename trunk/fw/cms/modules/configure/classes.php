@@ -71,7 +71,9 @@ class ClassModel extends Model{
 		$type = array(
 			'input'		=>'Input',
 			'textarea'	=>'Textarea',
-			'tinymce'	=>'TextEditor',
+			'bbcodemce'=>'BBCode',
+			'simplemce'	=>'Simple Editor',
+			'tinymce'	=>'Text Editor',
 		);
 		if($status){
 			$type['status'] = 'As status field';
