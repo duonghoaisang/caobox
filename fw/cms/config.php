@@ -29,8 +29,8 @@ $i = -1;
 // Menu 
 
 $i++;
-$MenuName[$i] = 'jQuery manual';
-$MenuLink[$i][] = array('name'=>'Manage API','link'=>'?mod=content&type=1');
+$MenuName[$i] = 'Sản phẩm ';
+$MenuLink[$i][] = array('name'=>'Địa Điểm Giảm Giá Ưu Đãi','link'=>'?mod=content&type=1');
 $MenuLink[$i][] = array('name'=>'Version','link'=>'?mod=options&type=1');
 $MenuLink[$i][] = array('name'=>'Data type','link'=>'?mod=options&type=2');
 

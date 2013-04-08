@@ -24,6 +24,7 @@
         <!--BASIC icon-->
       </select></td>
     </tr>
+    <!--BOX block_ip-->
     <tr>
 	  <td class="textLabel">Your IP</td>
 	  <td>{my_ip}</td>
@@ -46,6 +47,7 @@
 	  <br />Ex: 118.1.3.10,210.2.7.23,...
 	  </td>
     </tr>
+    <!--BOX block_ip-->
 	<tr>
       <td class="textLabel">&nbsp;</td>
       <td align="right"><br />
