@@ -1,0 +1,20 @@
+
+
+
+.banner_middle{
+	width:1008px;
+	height:100px;
+	background:#eee;
+	margin:10px 0px;
+}
+.paging{
+	width:372px;
+	float:right;
+	margin-top:10px;
+}
+.paging .title{
+	float:left;
+	display:block;
+	width:96px;
+	padding-top:7px;
+}
