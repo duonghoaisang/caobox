@@ -25,6 +25,7 @@ function registerUser(doc){
 	var security_code = doc.security_code.value;
 	
 	
+	
 	if(fullname == ''){
 		alert('Vui long nhap ho ten');
 		doc.fullname.focus();
@@ -67,7 +68,8 @@ function registerUser(doc){
 	
 	$.post(root_dir+'user/register',$(doc).serialize(),function(data){
 		if(data.error == false){
-			alert('Success!')
+			$('#register').html('Đăng Ký thành công! Hệ thống đang tự động Đăng Nhập ...');
+			location.href=project_url;
 		}else{
 			alert(data.code)
 		}
@@ -121,4 +123,8 @@ function post_comment(doc){
 		}
 	},'json');
 	return false;
+}
+
+function toogleOnLabel(obj){
+	$(obj).toggleClass('on');
 }

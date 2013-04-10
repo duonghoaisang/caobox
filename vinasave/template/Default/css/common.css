@@ -5,8 +5,11 @@ body{
 a,a:active,a:visited{
 	border:0px;
 }
-.blue{
+.blue,a.blue{
 	color:#0a7ae6;
+}
+a.blue:hover{
+	color:#d70000;
 }
 .white,.white a{
 	color:#fff;
@@ -94,7 +97,7 @@ div.location_list{
 	margin-left:8px;
 }
 #header .info .left a{
-	font-size:0.8em;
+	font-size:0.9em;
 }
 #header h1{
 	float:left;
@@ -174,6 +177,7 @@ div.location_list{
 	margin-left:110px;
 	width:310px;
 	line-height:22px;
+	font-size:.9em;
 }
 .right_logo,.go_top{
 	background:url(../images/right_logo.png) no-repeat;
@@ -189,7 +193,7 @@ div.location_list{
 .navigation{
 	width:100%;
 	height:35px;
-	background:url(../images/nav_bg_full.png);
+	background:url(../images/nav_bg_full2.png);
 	position:absolute;
 	top:90px;
 	z-index:2;
@@ -355,17 +359,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .box_search .search_btn{
 	width:60px;
 	border: 0px;
-	background: #333;
-	padding: 5px 8px 2px 8px;
+	background: #c2c2c2;
+	padding: 2px 8px 2px 8px;
 	border-radius: 6px;
 	color: #fff;
-	margin-top:-2px;
+	margin-top:0px;
+	
 }
 .box_search .search_btn input{
 	width: auto;
 	margin-left: 0px;
 	background: none;
 	color: #fff;
+	font-style:normal;
 }
 .box_search input{
 	border:0px;
@@ -463,24 +469,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	position:absolute;
 	top:-26px;
 	padding-top:36px;
+	margin-top:2px;
 }
 .submenu{
 	text-align:right;
 	position:relative;
 	padding:10px 0px;
-	font-style:italic;
 	color:#a4a4a4;
 	margin-right:10px;
+	height:24px;
 }
 .submenu ul,.submenu_bg{
-	width:414px;
+	width:476px;
 	position: absolute;
 	top:0px;
 	z-index:3;
+	text-transform:uppercase;
 	
 }
 .submenu_bg{
-	width:406px;
+	width:470px;
 	z-index:1;
 	background:#e7e7e7;
 	height:33px;
@@ -493,7 +501,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	border-top: 0px;
 	border-left:0px;
 	font-style:normal;
-	width:78px;
+	width:94px;
 	text-align:center;
 	
 }
@@ -506,7 +514,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 .submenu_current{
 	background:url(../images/submenu_current.png?v=1);;
-	width:99px;
+	width:115px;
 	height:33px;
 	position:absolute;
 	left:10px;
@@ -514,6 +522,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	z-index:2;
 	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.20), rgba(0,0,0,0.12) 0px 0px 10px inset;
    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.20), rgba(0,0,0,0.12) 0px 0px 10px inset;
+}
+.submenu .news_hot{
+	width: 530px;
+	float: right;
+	background: #eee;
 }
 .submenu li.white a{
 	color:#fff;
@@ -596,7 +609,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	float:left;
 }
 #footer .col2 .site_map{
-	width:235px;
+	width:209px;
 	font-size:14px;
 }
 #footer .col2 .payment{
@@ -633,10 +646,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #footer ul.none li{
 	list-style:none;
 }
-#footer ul.level1{
+ul.level1{
 	margin-left:10px;
 }
-#footer ul.level2{
+ul.level2{
 	margin-left:20px;
 }
 #footer .content .bottom_logo{
@@ -649,11 +662,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	width:370px;
 	height:88px;
 	position:absolute;
-	background:#616161;
 	bottom:0px;
 	border:1px solid #4e4e4e;
 	border-radius:2px;
+	top:288px;
 	padding:5px 0px 0px 10px;
+	background: rgb(16,16,16); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(16,16,16,1) 0%, rgba(69,69,69,1) 46%, rgba(69,69,69,1) 56%, rgba(16,16,16,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,16,16,1)), color-stop(46%,rgba(69,69,69,1)), color-stop(56%,rgba(69,69,69,1)), color-stop(100%,rgba(16,16,16,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(16,16,16,1) 0%,rgba(69,69,69,1) 46%,rgba(69,69,69,1) 56%,rgba(16,16,16,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(16,16,16,1) 0%,rgba(69,69,69,1) 46%,rgba(69,69,69,1) 56%,rgba(16,16,16,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(16,16,16,1) 0%,rgba(69,69,69,1) 46%,rgba(69,69,69,1) 56%,rgba(16,16,16,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(16,16,16,1) 0%,rgba(69,69,69,1) 46%,rgba(69,69,69,1) 56%,rgba(16,16,16,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#101010', endColorstr='#101010',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: 0px 1px 18px #adab96;
+	-moz-box-shadow:    0px 1px 18px #adab96;
+	box-shadow:         0px 1px 18px #adab96;
 }
 #footer .col3 > a{
 	display:block;
@@ -700,6 +724,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	font-size:11px;
 	padding-top:2px;
 }
+.bookmark .visited{
+	width:60px;
+}
 .bookmark .like{
 	background:url(../images/like.png) no-repeat;
 	
@@ -730,7 +757,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 .box_category li,.box_category a{
 	width:270px;
-	height:48px;
+	height:51px;
 	display:block;
 	float:left;
 	position:relative;
@@ -759,7 +786,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .box_product{
 	float:left;
 	width:332px;
-	height:230px;
+	height:260px;
 	position:relative;
 	margin-right:4px;
 	margin-top:15px;
@@ -783,7 +810,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	margin:0px auto;
 	height:74px;
 	position:absolute;
-	top:145px;
+	top:160px;
 	left:14px;
 	background:#fff;
 	padding:0px 12px;
@@ -817,14 +844,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .box_product .grippon{
-	width:50px;
-	height:39px;
+	width:72px;
+	height:35px;
 	position:absolute;
 	right:20px;
 	top:-4px;
-	padding-top:15px;
+	padding-top:10px;
 	text-align:center;
 	background:url(../images/grippon.png?v=1);
+	font-weight: bold;
+	font-size: 1.4em;
 	
 }
 .box_product .desc_hover_content{
@@ -832,7 +861,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	bottom: 40px;
 	padding: 0px 5px;
 	font-size:13px;
-	font-style: italic;
 }
 .box_product .desc_hover_info{
 	padding: 5px;
@@ -850,4 +878,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	top:0px;
 	width:1030px;
 	z-index:10;
+}
+.floatleft{
+	float:left;
 }

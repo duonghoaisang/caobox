@@ -1,0 +1,104 @@
+#register .title{
+	font-weight:bold;
+	font-size:1.3em;
+	margin:8px 0px;
+}
+.col1{
+	width:650px;
+	
+	border-right:1px solid #e5e5e5;
+}
+.col1 .welcome{
+	background:#e3edc8;
+	width:600px;
+	padding:10px;
+	line-height:22px;
+}
+.welcome ul{
+	margin-top:10px;
+}
+.typereg{
+	display:inline-block;
+	width:206px;
+	background:url(../images/typereg.png) no-repeat;
+	font-size:1.2em;
+	padding: 4px 0px 2px 36px;
+	
+}
+.typereg.on{
+	background:url(../images/typereg_on.png) no-repeat;
+	width:306px;
+}
+.spanleft{
+	display:inline-block;
+	width:200px;
+}
+.form{
+	position:relative;
+	margin-top:14px;
+	border-right:0px;
+}
+.form input{
+	width:258px;
+	border: 1px solid #e5e5e5;
+	border-radius:6px;
+	padding:6px;
+	margin-bottom:5px;
+}
+.form input.security_code{
+	width:132px;
+}
+.form input.nowidth{
+	width:auto;
+	margin-bottom:10px;
+}
+.captcha{
+	position:absolute;
+	top: 230px;
+	margin-left: 5px;
+}
+label{
+	display:block;
+	background:url(../images/typereg.png) no-repeat;
+	padding: 6px 0px 4px 36px;
+}
+label.on{
+	background:url(../images/typereg_on.png) no-repeat;
+}
+
+.policy{
+	border: 1px solid #000;
+	padding: 10px;
+	width: 464px;
+	margin-top: 14px;
+}
+.form input.regist_btn{
+	margin-left: 398px;
+	padding: 5px 15px;
+	font-size: 1em;
+	font-weight: bold;
+	color: #fff;
+	margin-top: 10px;
+	background:#05a1ea;
+}
+
+.col2{
+	width:270px;
+	margin-left:20px;
+	font-size:1.1em;
+	font-weight:bold;
+}
+.left_login,.left_login_fb{
+	display:block;
+	width:150px;
+	height:28px;
+	background:url(../images/let_login.png);
+	padding-left: 54px;
+	padding-top: 12px;
+	margin: 20px 0px 40px 0px;
+}
+.left_login_fb{
+	width:146px;
+	height:23px;
+	background:url(../images/let_login_fb.png);
+}

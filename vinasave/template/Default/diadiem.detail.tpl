@@ -14,7 +14,7 @@
 					<div class="box_category black">
 						<ul>
 							<!--BASIC categories-->
-							<li class="{categories.active}"><a  href="{root_dir}{module.diadiem}/{categories.name_url}/{categories.id}/{current_submenu}"><img src="{_UPLOAD}{categories.icon}"></img>{categories.name}</a></li>
+							<li class="{categories.active}"><a  href="{root_dir}{module_url}/{categories.name_url}/{categories.id}/{current_submenu}"><img src="{_UPLOAD}{categories.icon}"></img>{categories.name}</a></li>
 							<!--BASIC categories-->
 						</ul>
 						
@@ -48,7 +48,7 @@
 								<span class="warn"></span>
 							</div>
 						</div>
-						<div class="grippon white">-{related_products.discount}%</div>
+						<div class="grippon white">- {related_products.discount}%</div>
 					</div>
 					<!--BASIC related_products-->
 					
@@ -80,7 +80,7 @@
 								<span class="warn"></span>
 							</div>
 						</div>
-						<div class="grippon white">-{recommend_products.discount}%</div>
+						<div class="grippon white">- {recommend_products.discount}%</div>
 					</div>
 					<!--BASIC recommend_products-->
 					
@@ -116,12 +116,21 @@
 					</div>
 					
 					<div class="socials">
-						<span class="red">{visited}</span> views
+						
 						<div class="bookmark">
+							<span class="visited"><span class="red">{visited}</span> views</span>
 							<span class="like">{like}</span>
 							<span class="unlike">{unlike}</span>
+							<div style="width: 190px;float: left;">
+							
+<div class="fb-like" data-href="http://phpbasic.com/1" data-send="false" data-layout="button_count" data-width="20" data-show-faces="false"></div>
+							
+							<fb:share-button type="button_count" href="http://phpbasic.com/1">
+        </fb:share-button>
+							</div>
 							<span class="email"></span>
 							<span class="warn"></span>
+							
 						</div>
 					</div>
 					
@@ -166,7 +175,7 @@
 					
 					
 					<div class="chat marginleft15">
-						<div id="comment_rows">
+						<div id="comment_rows" style="display:none;">
 							<div class="rows">
 								<div class="col1 avatar"></div>
 								<div class="col1 nick red">$fullname$</div>
@@ -209,5 +218,14 @@
 					
 					
 				</div>
+				
+				<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1&appId=254342307924301";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 				
 			

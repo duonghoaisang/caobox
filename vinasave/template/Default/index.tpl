@@ -48,7 +48,7 @@
 							<a class="start" href="#"></a>
 							<span class="name bold">{products.name}</span>
 							<span class="address">{products.address}</span>
-							<div class="remain_time" data-time="{products.remain_time}">Con <span class="blue">{products.remain_time}</span> ngay <span class="blue">17:35:20</span></div>
+							<div class="remain_time" data-time="{products.remain_time}"></span></div>
 							
 							<div class="bookmark">
 								<span class="like">{products.like}</span>
@@ -57,7 +57,7 @@
 								<span class="warn"></span>
 							</div>
 						</div>
-						<div class="grippon white">-{products.discount}%</div>
+						<div class="grippon white">- {products.discount}%</div>
 					</div>
 					<!--BASIC products-->
 					

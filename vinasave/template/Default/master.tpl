@@ -85,10 +85,10 @@
 					Hotline: <span class="yellow bold hotline">0909 0909</span><br />
 					Hỗ trợ trực tuyến <img src="images/ym.png" /> <img src="images/ym.png" /><br />
 					<!--BOX require_login-->
-					<a href="{root_dir}user/register">Đăng ký</a> |  <a href="{root_dir}user/login">Đăng nhập</a>
+					<a href="{root_dir}{module.user}/register">Đăng ký</a> |  <a href="{root_dir}{module.user}/login">Đăng nhập</a>
 					<!--BOX require_login-->
 					<!--BOX userinfo-->
-					Welcome {member.fullname}, <a href="{root_dir}user/profile">Profile</a> | <a href="{root_dir}user/logout">Logout</a>
+					Welcome {member.fullname}, <a href="{root_dir}{module.user}/profile">Profile</a> | <a href="{root_dir}user/logout">Logout</a>
 					<!--BOX userinfo-->
 				</div>
 			</div>
@@ -163,7 +163,8 @@
 					<li class="{submenu_active.expire}"><a href="{root_dir}{module_url}/{lang_expire}">Sắp hết hạn</a></li>
 				</ul>
 				<div class="submenu_bg"></div>
-				Chào mừng ngày Quốc Tế Phụ Nữ (08/03/1977 – 08/03/2013)
+				<div class="news_hot"><a href="#" class="blue">Chào mừng ngày Quốc Tế Phụ Nữ (08/03/1977 – 08/03/2013)</a></div>
+				
 			</div>
 			</div>
 			<!-- Top Product  & Category -->
