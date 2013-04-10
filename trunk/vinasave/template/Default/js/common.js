@@ -77,16 +77,25 @@ $(document).ready(function(){
 	
 	$('.remain_time').each(function(){
 		var remain_time = $(this).data('time');
-		$(this).countdown({until: remain_time, compact: true, 
-		    layout: 'Còn <span class="blue">{dn} </span>  ngày   <span class="blue">{hnn}:{mnn}:{snn}</span>', 
-		    onExpiry:function(){location.reload();}
-		});
+		var expire_text = '<span class="red strong">Da het han</span>';
+		if(remain_time > 0){
+			$(this).countdown({until: remain_time, compact: true, 
+			    layout: 'Còn <span class="blue">{dn} </span>  ngày   <span class="blue">{hnn}:{mnn}:{snn}</span>', 
+			    onExpiry:function(){$('.remain_time').html(expire_text);}
+			});
+		}else{
+			$('.remain_time').html(expire_text);
+		}
+		
 	});
 	$('.banner > div.right_menu > div').hover(function(){
 		$(this).addClass('on');
 	},function(){
 		$(this).removeClass('on');
 	});
+	
+	// register 
+	
 	
 	
 });
